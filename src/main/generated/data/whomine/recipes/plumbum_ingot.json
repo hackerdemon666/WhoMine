@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "whomine:plumbum_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "whomine:plumbum_ingot"
+  }
+}

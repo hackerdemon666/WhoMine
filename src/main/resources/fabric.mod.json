@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "whomine",
+	"version": "${version}",
+	"name": "WhoMine",
+	"description": "Here you will find various things from the server WhoMine. Most of them are pieces of shit so don't be surprised",
+	"authors": [
+		"_Hacker__Demon_",
+		"P0loskun"
+	],
+	"contact": {
+		"homepage": "https://whomine.net/",
+		"sources": "https://github.com/MinersStudios/WhoMine"
+	},
+	"license": "WhoMine",
+	"icon": "assets/whomine/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"minersstudios.whomine.WhoMineMod"
+		],
+		"client": [
+			"minersstudios.whomine.WhoMineModClient"
+		],
+		"fabric-datagen": [
+			"minersstudios.whomine.WhoMineModDataGenerator"
+		]
+	},
+	"mixins": [
+		"whomine.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.6",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

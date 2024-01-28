@@ -1,0 +1,21 @@
+{
+  "item.whomine.wrench": "Гаечный ключ",
+  "item.whomine.wrench.empty": "Свойства объекта %s не заданы",
+  "item.whomine.wrench.select": "выбрано «%s» (%s)",
+  "item.whomine.wrench.update": "«%s»: %s",
+
+  "item.whomine.hat": "Шляпа",
+  "item.whomine.leather_hat": "Кожанная шляпа",
+  "item.whomine.raw_plumbum": "Сырой свинец",
+  "item.whomine.plumbum_ingot": "Свинцовый слиток",
+
+  "block.whomine.plumbum_ore": "Свинцовая руда",
+  "block.whomine.plumbum_block": "Свинцовый блок",
+  "block.whomine.raw_plumbum_block": "Сырой свинцовый блок",
+  "block.whomine.color_block": "Цветной блок",
+
+  "block.whomine.big_armchair": "Кресло",
+  "block.whomine.small_chair": "Стул",
+
+  "itemgroup.whomine": "WhoMine"
+}

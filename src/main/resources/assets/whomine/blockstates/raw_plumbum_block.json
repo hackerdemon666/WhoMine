@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "whomine:block/raw_plumbum_block"
+    }
+  }
+}

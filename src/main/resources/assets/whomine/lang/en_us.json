@@ -1,0 +1,21 @@
+{
+  "item.whomine.wrench": "Wrench",
+  "item.whomine.wrench.empty": "%s has no properties",
+  "item.whomine.wrench.select": "selected \"%s\" (%s)",
+  "item.whomine.wrench.update": "\"%s\" to %s",
+
+  "item.whomine.hat": "Hat",
+  "item.whomine.leather_hat": "Leather Hat",
+  "item.whomine.raw_plumbum": "Raw Plumbum",
+  "item.whomine.plumbum_ingot": "Plumbum Ingot",
+
+  "block.whomine.plumbum_ore": "Plumbum Ore",
+  "block.whomine.plumbum_block": "Plumbum Block",
+  "block.whomine.raw_plumbum_block": "Raw Plumbum Block",
+  "block.whomine.color_block": "Color Block",
+
+  "block.whomine.big_armchair": "Armchair",
+  "block.whomine.small_chair": "Chair",
+
+  "itemgroup.whomine": "WhoMine"
+}

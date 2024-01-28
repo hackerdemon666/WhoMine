@@ -1,0 +1,58 @@
+{
+  "variants": {
+    "facing=north,wood_type=oak": { "model": "whomine:custom/furniture/chairs/big_armchair/oak"},
+    "facing=east,wood_type=oak":  { "model": "whomine:custom/furniture/chairs/big_armchair/oak", "y":  90},
+    "facing=south,wood_type=oak": { "model": "whomine:custom/furniture/chairs/big_armchair/oak", "y": 180},
+    "facing=west,wood_type=oak":  { "model": "whomine:custom/furniture/chairs/big_armchair/oak", "y": 270},
+
+    "facing=north,wood_type=spruce": { "model": "whomine:custom/furniture/chairs/big_armchair/spruce"},
+    "facing=east,wood_type=spruce":  { "model": "whomine:custom/furniture/chairs/big_armchair/spruce", "y":  90},
+    "facing=south,wood_type=spruce": { "model": "whomine:custom/furniture/chairs/big_armchair/spruce", "y": 180},
+    "facing=west,wood_type=spruce":  { "model": "whomine:custom/furniture/chairs/big_armchair/spruce", "y": 270},
+
+    "facing=north,wood_type=birch": { "model": "whomine:custom/furniture/chairs/big_armchair/birch"},
+    "facing=east,wood_type=birch":  { "model": "whomine:custom/furniture/chairs/big_armchair/birch", "y":  90},
+    "facing=south,wood_type=birch": { "model": "whomine:custom/furniture/chairs/big_armchair/birch", "y": 180},
+    "facing=west,wood_type=birch":  { "model": "whomine:custom/furniture/chairs/big_armchair/birch", "y": 270},
+
+    "facing=north,wood_type=acacia": { "model": "whomine:custom/furniture/chairs/big_armchair/acacia"},
+    "facing=east,wood_type=acacia":  { "model": "whomine:custom/furniture/chairs/big_armchair/acacia", "y":  90},
+    "facing=south,wood_type=acacia": { "model": "whomine:custom/furniture/chairs/big_armchair/acacia", "y": 180},
+    "facing=west,wood_type=acacia":  { "model": "whomine:custom/furniture/chairs/big_armchair/acacia", "y": 270},
+
+    "facing=north,wood_type=cherry": { "model": "whomine:custom/furniture/chairs/big_armchair/jungle"},
+    "facing=east,wood_type=cherry":  { "model": "whomine:custom/furniture/chairs/big_armchair/jungle", "y":  90},
+    "facing=south,wood_type=cherry": { "model": "whomine:custom/furniture/chairs/big_armchair/jungle", "y": 180},
+    "facing=west,wood_type=cherry":  { "model": "whomine:custom/furniture/chairs/big_armchair/jungle", "y": 270},
+
+    "facing=north,wood_type=jungle": { "model": "whomine:custom/furniture/chairs/big_armchair/jungle"},
+    "facing=east,wood_type=jungle":  { "model": "whomine:custom/furniture/chairs/big_armchair/jungle", "y":  90},
+    "facing=south,wood_type=jungle": { "model": "whomine:custom/furniture/chairs/big_armchair/jungle", "y": 180},
+    "facing=west,wood_type=jungle":  { "model": "whomine:custom/furniture/chairs/big_armchair/jungle", "y": 270},
+
+    "facing=north,wood_type=dark_oak": { "model": "whomine:custom/furniture/chairs/big_armchair/dark_oak"},
+    "facing=east,wood_type=dark_oak":  { "model": "whomine:custom/furniture/chairs/big_armchair/dark_oak", "y":  90},
+    "facing=south,wood_type=dark_oak": { "model": "whomine:custom/furniture/chairs/big_armchair/dark_oak", "y": 180},
+    "facing=west,wood_type=dark_oak":  { "model": "whomine:custom/furniture/chairs/big_armchair/dark_oak", "y": 270},
+
+    "facing=north,wood_type=crimson": { "model": "whomine:custom/furniture/chairs/big_armchair/crimson"},
+    "facing=east,wood_type=crimson":  { "model": "whomine:custom/furniture/chairs/big_armchair/crimson", "y":  90},
+    "facing=south,wood_type=crimson": { "model": "whomine:custom/furniture/chairs/big_armchair/crimson", "y": 180},
+    "facing=west,wood_type=crimson":  { "model": "whomine:custom/furniture/chairs/big_armchair/crimson", "y": 270},
+
+    "facing=north,wood_type=warped": { "model": "whomine:custom/furniture/chairs/big_armchair/warped"},
+    "facing=east,wood_type=warped":  { "model": "whomine:custom/furniture/chairs/big_armchair/warped", "y":  90},
+    "facing=south,wood_type=warped": { "model": "whomine:custom/furniture/chairs/big_armchair/warped", "y": 180},
+    "facing=west,wood_type=warped":  { "model": "whomine:custom/furniture/chairs/big_armchair/warped", "y": 270},
+
+    "facing=north,wood_type=mangrove": { "model": "whomine:custom/furniture/chairs/big_armchair/mangrove"},
+    "facing=east,wood_type=mangrove":  { "model": "whomine:custom/furniture/chairs/big_armchair/mangrove", "y":  90},
+    "facing=south,wood_type=mangrove": { "model": "whomine:custom/furniture/chairs/big_armchair/mangrove", "y": 180},
+    "facing=west,wood_type=mangrove":  { "model": "whomine:custom/furniture/chairs/big_armchair/mangrove", "y": 270},
+
+    "facing=north,wood_type=bamboo": { "model": "whomine:custom/furniture/chairs/big_armchair/oak"},
+    "facing=east,wood_type=bamboo":  { "model": "whomine:custom/furniture/chairs/big_armchair/oak", "y":  90},
+    "facing=south,wood_type=bamboo": { "model": "whomine:custom/furniture/chairs/big_armchair/oak", "y": 180},
+    "facing=west,wood_type=bamboo":  { "model": "whomine:custom/furniture/chairs/big_armchair/oak", "y": 270}
+  }
+}
