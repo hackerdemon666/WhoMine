@@ -28,5 +28,6 @@ public class ModItemsRegistry {
         return Registry.register(Registries.ITEM, new Identifier(WhoMineMod.MOD_ID, name), item);
     }
 
-    public static void register() {}
+    public static void register() {
+    }
 }

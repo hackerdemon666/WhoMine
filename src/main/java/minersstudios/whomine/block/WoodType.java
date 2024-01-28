@@ -19,9 +19,11 @@ public enum WoodType implements StringIdentifiable {
     private final String name;
     private final BlockSoundGroup soundGroup;
 
+
     WoodType(String name, BlockSoundGroup soundGroup) {
         this.name = name;
         this.soundGroup = soundGroup;
+        WoodTypeProperty.addKey(this);
     }
 
     public String getName() {
@@ -35,5 +37,10 @@ public enum WoodType implements StringIdentifiable {
     @Override
     public String asString() {
         return getName();
+    }
+
+    public static WoodType get(String name) {
+        for (WoodType type : values()) if (type.getName().equals(name)) return type;
+        return OAK;
     }
 }

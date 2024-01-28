@@ -11,11 +11,26 @@ import net.minecraft.nbt.NbtCompound;
 public class DyeableBlockItem extends BlockItem implements DyeableItem {
     public DyeableBlockItem(Block block, Item.Settings settings) {
         super(block, settings);
-        this.setColor(new ItemStack(this), 10511680);
     }
 
-    private void createWoodType(WoodType type) {
-        NbtCompound nbt = new NbtCompound();
-        nbt.putString("type", type.getName());
+
+    public boolean isPainted(ItemStack stack) {
+        NbtCompound nbtCompound = stack.getSubNbt("display");
+        return nbtCompound != null && nbtCompound.contains("color", 99);
+    }
+
+    @Override
+    public int getColor(ItemStack stack) {
+        NbtCompound nbtCompound = stack.getSubNbt("display");
+        return nbtCompound != null && nbtCompound.contains("color", 99) ? nbtCompound.getInt("color") : 16383998;
+    }
+
+    public WoodType getType(ItemStack stack) {
+        NbtCompound nbtCompound = stack.getSubNbt("display");
+        return nbtCompound != null && nbtCompound.contains("type") ? WoodType.get(nbtCompound.getString("type")) : WoodType.OAK;
+    }
+
+    public void setType(ItemStack stack, WoodType type) {
+        stack.getOrCreateSubNbt("display").putString("type", type.getName());
     }
 }

@@ -1,16 +1,19 @@
 package minersstudios.whomine.block;
 
-import net.minecraft.block.BlockSetType;
-import net.minecraft.sound.BlockSoundGroup;
 import com.google.common.collect.Lists;
+import net.minecraft.state.property.EnumProperty;
+
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import net.minecraft.state.property.EnumProperty;
 
 public class WoodTypeProperty
         extends EnumProperty<WoodType> {
+    private static final Map<String, WoodType> keys = new HashMap<>();
+
     public WoodTypeProperty(String name, Collection<WoodType> values) {
         super(name, WoodType.class, values);
     }
@@ -29,5 +32,13 @@ public class WoodTypeProperty
 
     public static WoodTypeProperty of(String name, Collection<WoodType> values) {
         return new WoodTypeProperty(name, values);
+    }
+
+    public static void addKey(WoodType type) {
+        keys.put(type.getName(), type);
+    }
+
+    public static Map<String, WoodType> getKeys() {
+        return keys;
     }
 }
