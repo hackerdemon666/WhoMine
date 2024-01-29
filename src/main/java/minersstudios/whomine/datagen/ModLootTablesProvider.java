@@ -1,10 +1,15 @@
 package minersstudios.whomine.datagen;
 
 import minersstudios.whomine.block.ModBlocksRegistry;
+import minersstudios.whomine.block.WoodType;
+import minersstudios.whomine.block.WoodTypeProperty;
 import minersstudios.whomine.item.ModItemsRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.HorizontalFacingBlock;
+import net.minecraft.block.StairsBlock;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
@@ -14,6 +19,10 @@ import net.minecraft.loot.entry.LeafEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 
 public class ModLootTablesProvider extends FabricBlockLootTableProvider {
     public ModLootTablesProvider(FabricDataOutput dataOutput) {
@@ -27,7 +36,6 @@ public class ModLootTablesProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocksRegistry.RAW_PLUMBUM_BLOCK);
 
         addDrop(ModBlocksRegistry.SMALL_CHAIR, ModItemsRegistry.SMALL_CHAIR);
-        addDrop(ModBlocksRegistry.BIG_ARMCHAIR, ModItemsRegistry.BIG_ARMCHAIR);
     }
 
     public LootTable.Builder copperLikeOreDrops(Block drop, Item item) {

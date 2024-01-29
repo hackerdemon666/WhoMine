@@ -14,7 +14,20 @@
   "block.whomine.raw_plumbum_block": "Сырой свинцовый блок",
   "block.whomine.color_block": "Цветной блок",
 
-  "block.whomine.big_armchair": "Кресло",
+  "block.whomine.oak_big_armchair": "Кресло",
+
+  "item.whomine.oak_big_armchair": "Дубовое кресло",
+  "item.whomine.spruce_big_armchair": "Еловое кресло",
+  "item.whomine.birch_big_armchair": "Берёзовое кресло",
+  "item.whomine.acacia_big_armchair": "Акациевое кресло",
+  "item.whomine.cherry_big_armchair": "Вишнёвое кресло",
+  "item.whomine.jungle_big_armchair": "Кресло из тропического дерева",
+  "item.whomine.dark_oak_big_armchair": "Кресло из тёмного дуба",
+  "item.whomine.crimson_big_armchair": "Багровое кресло",
+  "item.whomine.warped_big_armchair": "Искажённое кресло",
+  "item.whomine.mangrove_big_armchair": "Мангровое кресло",
+  "item.whomine.bamboo_big_armchair": "Бамбуковое кресло",
+
   "block.whomine.small_chair": "Стул",
 
   "itemgroup.whomine": "WhoMine"

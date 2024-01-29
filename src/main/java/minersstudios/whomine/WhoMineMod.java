@@ -24,5 +24,7 @@ public class WhoMineMod implements ModInitializer {
 		ModEntitiesRegistry.register();
 		ModItemsRegistry.register();
 		ModItemGroupsRegistry.register();
+
+		SitOnUseBlock.register();
 	}
 }

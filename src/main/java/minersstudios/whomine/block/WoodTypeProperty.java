@@ -1,7 +1,5 @@
 package minersstudios.whomine.block;
 
-import net.minecraft.block.BlockSetType;
-import net.minecraft.sound.BlockSoundGroup;
 import com.google.common.collect.Lists;
 import java.util.Arrays;
 import java.util.Collection;

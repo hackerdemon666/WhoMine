@@ -2,6 +2,7 @@ package minersstudios.whomine.block;
 
 import com.mojang.serialization.MapCodec;
 import minersstudios.whomine.item.DyeableBlockItem;
+import minersstudios.whomine.item.ModItemsRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
@@ -77,13 +78,22 @@ public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implemen
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
         if (world.isClient) return;
         if (blockEntity == null) return;
-        Block.getDroppedStacks(state, (ServerWorld) world, pos, blockEntity, null, null)
-                .forEach((itemStack) -> {
-                    if (itemStack.getItem() instanceof DyeableBlockItem && ((DyeableBlockEntity) blockEntity).hasColor()) {
-                        ((DyeableItem) itemStack.getItem()).setColor(itemStack, ((DyeableBlockEntity) blockEntity).getColor());
-                    }
-                    Block.dropStack(world, pos, itemStack);
-                });
-        state.onStacksDropped((ServerWorld) world, pos, null, false);
+        switch (state.get(WOOD_TYPE)) {
+            case OAK -> stack = new ItemStack(ModItemsRegistry.OAK_BIG_ARMCHAIR);
+            case SPRUCE -> stack = new ItemStack(ModItemsRegistry.SPRUCE_BIG_ARMCHAIR);
+            case BIRCH -> stack = new ItemStack(ModItemsRegistry.BIRCH_BIG_ARMCHAIR);
+            case ACACIA -> stack = new ItemStack(ModItemsRegistry.ACACIA_BIG_ARMCHAIR);
+            case CHERRY -> stack = new ItemStack(ModItemsRegistry.CHERRY_BIG_ARMCHAIR);
+            case JUNGLE -> stack = new ItemStack(ModItemsRegistry.JUNGLE_BIG_ARMCHAIR);
+            case DARK_OAK -> stack = new ItemStack(ModItemsRegistry.DARK_OAK_BIG_ARMCHAIR);
+            case CRIMSON -> stack = new ItemStack(ModItemsRegistry.CRIMSON_BIG_ARMCHAIR);
+            case WARPED -> stack = new ItemStack(ModItemsRegistry.WARPED_BIG_ARMCHAIR);
+            case MANGROVE -> stack = new ItemStack(ModItemsRegistry.MANGROVE_BIG_ARMCHAIR);
+            case BAMBOO -> stack = new ItemStack(ModItemsRegistry.BAMBOO_BIG_ARMCHAIR);
+        }
+        if (stack.getItem() instanceof DyeableBlockItem && ((DyeableBlockEntity) blockEntity).hasColor()) {
+            ((DyeableItem) stack.getItem()).setColor(stack, ((DyeableBlockEntity) blockEntity).getColor());
+        }
+        Block.dropStack(world, pos, stack);
     }
 }

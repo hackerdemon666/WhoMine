@@ -28,7 +28,18 @@ public class WhoMineModClient implements ClientModInitializer {
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> getColorNbt(Objects.requireNonNull(view), pos), ModBlocksRegistry.BIG_ARMCHAIR);
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> getColorNbt(Objects.requireNonNull(view), pos), ModBlocksRegistry.SMALL_CHAIR);
 
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModBlocksRegistry.BIG_ARMCHAIR);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.OAK_BIG_ARMCHAIR);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.SPRUCE_BIG_ARMCHAIR);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.BIRCH_BIG_ARMCHAIR);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.ACACIA_BIG_ARMCHAIR);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.CHERRY_BIG_ARMCHAIR);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.JUNGLE_BIG_ARMCHAIR);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.DARK_OAK_BIG_ARMCHAIR);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.CRIMSON_BIG_ARMCHAIR);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.WARPED_BIG_ARMCHAIR);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.MANGROVE_BIG_ARMCHAIR);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.BAMBOO_BIG_ARMCHAIR);
+
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModBlocksRegistry.SMALL_CHAIR);
 
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.LEATHER_HAT);

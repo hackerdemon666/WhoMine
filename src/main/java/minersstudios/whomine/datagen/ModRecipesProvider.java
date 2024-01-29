@@ -32,7 +32,7 @@ public class ModRecipesProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItemsRegistry.RAW_PLUMBUM, RecipeCategory.DECORATIONS,
                 ModBlocksRegistry.RAW_PLUMBUM_BLOCK);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItemsRegistry.BIG_ARMCHAIR, 1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItemsRegistry.OAK_BIG_ARMCHAIR, 1)
                 .pattern("WW ")
                 .pattern("WLW")
                 .pattern("W W")
@@ -40,6 +40,6 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 .input('L', Items.LEATHER)
                 .criterion(hasItem(Items.OAK_PLANKS), conditionsFromItem(Items.OAK_PLANKS))
                 .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItemsRegistry.BIG_ARMCHAIR)));
+                .offerTo(exporter, new Identifier(getRecipeName(ModItemsRegistry.OAK_BIG_ARMCHAIR)));
     }
 }
