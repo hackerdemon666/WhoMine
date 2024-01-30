@@ -12,6 +12,7 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
@@ -37,6 +38,11 @@ public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implemen
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(Properties.HORIZONTAL_FACING);
         builder.add(WOOD_TYPE);
+    }
+
+    @Override
+    public BlockSoundGroup getSoundGroup(BlockState state) {
+        return state.get(WOOD_TYPE).getSoundGroup();
     }
 
     @Override

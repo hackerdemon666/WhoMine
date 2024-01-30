@@ -47,4 +47,4 @@
 
 ## Special thanks
 
-Special thanks to [RoVoid](https://github.com/RoVoid), [Llama](https://github.com/Erfram) for helping and supporting!
+Special thanks to [RoVoid](https://github.com/RoVoid), [Llama](https://github.com/Erfram), [TorayLife](https://github.com/TorayLife) for helping and supporting!

@@ -2,6 +2,7 @@ package minersstudios.whomine;
 
 import minersstudios.whomine.block.DyeableBlockEntity;
 import minersstudios.whomine.block.ModBlocksRegistry;
+import minersstudios.whomine.block.WoodType;
 import minersstudios.whomine.entity.ModEntitiesRegistry;
 import minersstudios.whomine.entity.SitEntity;
 import minersstudios.whomine.item.ModItemsRegistry;
@@ -11,10 +12,12 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.Frustum;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.item.DyeableItem;
+import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
@@ -28,23 +31,25 @@ public class WhoMineModClient implements ClientModInitializer {
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> getColorNbt(Objects.requireNonNull(view), pos), ModBlocksRegistry.BIG_ARMCHAIR);
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> getColorNbt(Objects.requireNonNull(view), pos), ModBlocksRegistry.SMALL_CHAIR);
 
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.OAK_BIG_ARMCHAIR);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.SPRUCE_BIG_ARMCHAIR);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.BIRCH_BIG_ARMCHAIR);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.ACACIA_BIG_ARMCHAIR);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.CHERRY_BIG_ARMCHAIR);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.JUNGLE_BIG_ARMCHAIR);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.DARK_OAK_BIG_ARMCHAIR);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.CRIMSON_BIG_ARMCHAIR);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.WARPED_BIG_ARMCHAIR);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.MANGROVE_BIG_ARMCHAIR);
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.BAMBOO_BIG_ARMCHAIR);
+        for (Item item: ModItemsRegistry.registry) {
+            ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), item);
+        }
 
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModBlocksRegistry.SMALL_CHAIR);
 
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), ModItemsRegistry.LEATHER_HAT);
 
         EntityRendererRegistry.register(ModEntitiesRegistry.SIT, EmptyRenderer::new);
+
+//        for (Item item: ModItemsRegistry.registry) {
+//            ModelPredicateProviderRegistry.register(item, new Identifier("pull"), (stack, clientWorld, livingEntity) -> {
+//                if (livingEntity == null) {
+//                    return 0.0F;
+//                }
+//                return WoodType.
+////                return livingEntity.getActiveItem() != stack ? 0.0F : (stack.getMaxUseTime() - livingEntity.getItemUseTimeLeft()) / 20.0F;
+//            });
+//        }
     }
 
     private int getColorNbt(BlockView view, BlockPos pos) {

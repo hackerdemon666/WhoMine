@@ -41,10 +41,11 @@ public class DyeableBlockItem extends BlockItem implements DyeableItem {
             return ActionResult.FAIL;
         } else {
             ItemPlacementContext itemPlacementContext = this.getPlacementContext(context);
-            if (itemPlacementContext == null) {
+            if (itemPlacementContext == null || this.getPlacementState(itemPlacementContext) == null) {
                 return ActionResult.FAIL;
             } else {
                 BlockState blockState = this.getPlacementState(itemPlacementContext).with(WoodTypeProperty.of("wood_type"), this.type);
+
                 if (blockState == null) {
                     return ActionResult.FAIL;
                 } else if (!this.place(itemPlacementContext, blockState)) {
@@ -55,6 +56,7 @@ public class DyeableBlockItem extends BlockItem implements DyeableItem {
                     PlayerEntity playerEntity = itemPlacementContext.getPlayer();
                     ItemStack itemStack = itemPlacementContext.getStack();
                     BlockState blockState2 = world.getBlockState(blockPos);
+
                     if (blockState2.isOf(blockState.getBlock())) {
                         blockState2 = this.placeFromNbt(blockPos, world, itemStack, blockState2);
                         this.postPlacement(blockPos, world, playerEntity, itemStack, blockState2);
