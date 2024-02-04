@@ -1,33 +1,29 @@
 package minersstudios.whomine.block;
 
-import com.mojang.serialization.MapCodec;
 import minersstudios.whomine.item.DyeableBlockItem;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.DyeableItem;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
-public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implements BlockEntityProvider {
+public class DyeableWoodBlock extends Block implements BlockEntityProvider {
     public static final WoodTypeProperty woodType = WoodTypeProperty.of("wood_type");
     public ModBlockCollisionType collisionType;
 
-    public DyeableHorizontalFacingBlock(Settings settings, ModBlockCollisionType collisionType) {
+    public DyeableWoodBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);
         this.collisionType = collisionType;
-        setDefaultState(getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(woodType, WoodType.OAK));
+        setDefaultState(getDefaultState().with(woodType, WoodType.OAK));
     }
 
     @Override
@@ -37,13 +33,7 @@ public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implemen
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(Properties.HORIZONTAL_FACING);
         builder.add(woodType);
-    }
-
-    @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return super.getPlacementState(ctx).with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing());
     }
 
     @Override
@@ -61,12 +51,6 @@ public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implemen
         return this.collisionType.getBlockCollision(state);
     }
 
-
-    @Override
-    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
-        return null;
-    }
-
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         super.onPlaced(world, pos, state, placer, stack);
@@ -82,7 +66,7 @@ public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implemen
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
         if (world.isClient) return;
         if (blockEntity == null) return;
-        ItemStack dropStack = new ItemStack(state.getBlock().asItem());
+        ItemStack dropStack = WoodType.getWoodBlockItem(state);
 
         if (((DyeableBlockEntity) blockEntity).isPainted()) ((DyeableItem) dropStack.getItem()).setColor(dropStack, ((DyeableBlockEntity) blockEntity).getColor());
         Block.dropStack(world, pos, dropStack);

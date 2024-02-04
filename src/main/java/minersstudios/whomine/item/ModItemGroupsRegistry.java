@@ -19,7 +19,7 @@ public class ModItemGroupsRegistry {
                         entries.add(ModItemsRegistry.HAT);
                         entries.add(ModItemsRegistry.LEATHER_HAT);
 
-//                        entries.add(ModItemsRegistry.SMALL_CHAIR);
+                        entries.add(ModItemsRegistry.COLOR_BLOCK);
 
                         entries.add(ModItemsRegistry.OAK_BIG_ARMCHAIR);
                         entries.add(ModItemsRegistry.SPRUCE_BIG_ARMCHAIR);

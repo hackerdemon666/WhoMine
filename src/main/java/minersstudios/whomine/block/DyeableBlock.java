@@ -15,7 +15,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class DyeableBlock extends Block implements BlockEntityProvider {
     public ModBlockCollisionType collisionType;
-
     public DyeableBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);
         this.collisionType = collisionType;
@@ -47,9 +46,10 @@ public class DyeableBlock extends Block implements BlockEntityProvider {
         if (world.isClient) return;
         if (blockEntity == null) return;
 
-        if (stack.getItem() instanceof DyeableBlockItem && ((DyeableBlockEntity) blockEntity).isPainted()) {
-            ((DyeableItem) stack.getItem()).setColor(stack, ((DyeableBlockEntity) blockEntity).getColor());
+        ItemStack dropStack = new ItemStack(state.getBlock().asItem());
+        if (((DyeableBlockEntity) blockEntity).isPainted()) {
+            ((DyeableItem) dropStack.getItem()).setColor(dropStack, ((DyeableBlockEntity) blockEntity).getColor());
         }
-        Block.dropStack(world, pos, stack);
+        Block.dropStack(world, pos, dropStack);
     }
 }

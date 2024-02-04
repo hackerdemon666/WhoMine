@@ -1,7 +1,7 @@
 package minersstudios.whomine.block;
 
 import com.mojang.serialization.MapCodec;
-import minersstudios.whomine.item.DyeableBlockItem;
+import minersstudios.whomine.item.DyeableWoodBlockItem;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
@@ -20,11 +20,11 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
-public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implements BlockEntityProvider {
+public class DyeableWoodHorizontalFacingBlock extends HorizontalFacingBlock implements BlockEntityProvider {
     public static final WoodTypeProperty woodType = WoodTypeProperty.of("wood_type");
     public ModBlockCollisionType collisionType;
 
-    public DyeableHorizontalFacingBlock(Settings settings, ModBlockCollisionType collisionType) {
+    public DyeableWoodHorizontalFacingBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);
         this.collisionType = collisionType;
         setDefaultState(getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(woodType, WoodType.OAK));
@@ -70,8 +70,8 @@ public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implemen
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         super.onPlaced(world, pos, state, placer, stack);
-        if (!(stack.getItem() instanceof DyeableBlockItem item)) return;
-        int color = stack.getSubNbt("BlockEntityTag") != null ? DyeableBlockItem.getBlockEntityNbt(stack).getCompound("tag").getCompound("display").getInt("color") : item.getColor(stack);
+        if (!(stack.getItem() instanceof DyeableWoodBlockItem item)) return;
+        int color = stack.getSubNbt("BlockEntityTag") != null ? DyeableWoodBlockItem.getBlockEntityNbt(stack).getCompound("tag").getCompound("display").getInt("color") : item.getColor(stack);
 
         DyeableBlockEntity blockEntity = (DyeableBlockEntity) world.getBlockEntity(pos);
         if (blockEntity == null) return;
@@ -82,8 +82,7 @@ public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implemen
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
         if (world.isClient) return;
         if (blockEntity == null) return;
-        ItemStack dropStack = new ItemStack(state.getBlock().asItem());
-
+        ItemStack dropStack = WoodType.getWoodBlockItem(state);
         if (((DyeableBlockEntity) blockEntity).isPainted()) ((DyeableItem) dropStack.getItem()).setColor(dropStack, ((DyeableBlockEntity) blockEntity).getColor());
         Block.dropStack(world, pos, dropStack);
     }

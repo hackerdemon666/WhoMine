@@ -20,6 +20,7 @@ public class HatItem extends Item implements Equipment {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         return this.equipAndSwap(this, world, user, hand);
     }
+
     @Override
     public EquipmentSlot getSlotType() {
         return EquipmentSlot.HEAD;

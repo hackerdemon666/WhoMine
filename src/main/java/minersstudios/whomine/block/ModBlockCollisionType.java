@@ -7,6 +7,12 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 
 public enum ModBlockCollisionType {
+    DEFAULT_BLOCK(){
+        @Override
+        public VoxelShape getBlockCollision(BlockState state){
+            return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1f, 1f, 1f);
+        }
+    },
     BIG_ARMCHAIR(){
         @Override
         public VoxelShape getBlockCollision(BlockState state){

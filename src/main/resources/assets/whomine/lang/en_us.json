@@ -12,7 +12,9 @@
   "block.whomine.plumbum_ore": "Plumbum Ore",
   "block.whomine.plumbum_block": "Plumbum Block",
   "block.whomine.raw_plumbum_block": "Raw Plumbum Block",
+
   "block.whomine.color_block": "Color Block",
+  "item.whomine.color_block": "Color Block",
 
   "block.whomine.oak_big_armchair": "Armchair",
 

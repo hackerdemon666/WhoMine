@@ -12,7 +12,9 @@
   "block.whomine.plumbum_ore": "Свинцовая руда",
   "block.whomine.plumbum_block": "Свинцовый блок",
   "block.whomine.raw_plumbum_block": "Сырой свинцовый блок",
+
   "block.whomine.color_block": "Цветной блок",
+  "item.whomine.color_block": "Цветной блок",
 
   "block.whomine.oak_big_armchair": "Кресло",
 
