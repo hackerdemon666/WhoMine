@@ -13,50 +13,38 @@ import java.util.Objects;
 
 public class DyeableBlockEntity extends BlockEntity {
     public static final int DEFAULT_COLOR = 10511680;
-
-    private int color;
-    private boolean hasColor = true;
+    private int color = -1;
 
     public DyeableBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntitiesRegistry.DYEABLE_BLOCK_ENTITY, pos, state);
-        this.color = DEFAULT_COLOR;
     }
 
     public int getColor() {
-        return this.color;
+        return isPainted() ? this.color : DEFAULT_COLOR;
     }
 
     public void setColor(int newColor, LivingEntity user) {
         this.color = newColor;
 
-        assert this.world != null;
+        if (this.world == null) return;
         this.world.emitGameEvent(GameEvent.BLOCK_CHANGE, this.getPos(), GameEvent.Emitter.of(user, this.getCachedState()));
         this.updateListeners();
     }
 
-    public boolean hasColor() {
-        return this.hasColor;
-    }
-
-    public void setHasColor(boolean hasColor, LivingEntity user) {
-        this.hasColor = hasColor;
-
-        assert this.world != null;
-        this.world.emitGameEvent(GameEvent.BLOCK_CHANGE, this.getPos(), GameEvent.Emitter.of(user, this.getCachedState()));
-        this.updateListeners();
+    public boolean isPainted() {
+        return this.color > -1;
     }
 
     @Override
     public void writeNbt(NbtCompound tag) {
         super.writeNbt(tag);
-        NbtCompound tagCompound = tag.getCompound("tag");
-        NbtCompound displayTag = tagCompound.getCompound("display");
-        if (this.hasColor) {
+        if (isPainted()) {
+            NbtCompound tagCompound = tag.getCompound("tag");
+            NbtCompound displayTag = tagCompound.getCompound("display");
             displayTag.putInt("color", this.color);
+            tagCompound.put("display", displayTag);
+            tag.put("tag", tagCompound);
         }
-        displayTag.putBoolean("hasColor", this.hasColor);
-        tagCompound.put("display", displayTag);
-        tag.put("tag", tagCompound);
     }
 
     @Override
@@ -66,12 +54,7 @@ public class DyeableBlockEntity extends BlockEntity {
             NbtCompound tagCompound = tag.getCompound("tag");
             if (tagCompound.contains("display")) {
                 NbtCompound displayTag = tagCompound.getCompound("display");
-                if (displayTag.contains("color")) {
-                    this.color = displayTag.getInt("color");
-                }
-                if (displayTag.contains("hasColor")) {
-                    this.hasColor = displayTag.getBoolean("hasColor");
-                }
+                this.color = displayTag.contains("color") ? displayTag.getInt("color") : -1;
             }
         }
     }

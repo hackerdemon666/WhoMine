@@ -25,8 +25,7 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocksRegistry.RAW_PLUMBUM_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(ModBlocksRegistry.BIG_ARMCHAIR)
-                .add(ModBlocksRegistry.SMALL_CHAIR);
+                .add(ModBlocksRegistry.BIG_ARMCHAIR);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL);
 

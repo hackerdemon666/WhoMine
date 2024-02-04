@@ -19,19 +19,19 @@ public class ModItemGroupsRegistry {
                         entries.add(ModItemsRegistry.HAT);
                         entries.add(ModItemsRegistry.LEATHER_HAT);
 
-                        entries.add(ModItemsRegistry.SMALL_CHAIR);
+//                        entries.add(ModItemsRegistry.SMALL_CHAIR);
 
                         entries.add(ModItemsRegistry.OAK_BIG_ARMCHAIR);
                         entries.add(ModItemsRegistry.SPRUCE_BIG_ARMCHAIR);
                         entries.add(ModItemsRegistry.BIRCH_BIG_ARMCHAIR);
-                        entries.add(ModItemsRegistry.ACACIA_BIG_ARMCHAIR);
-                        entries.add(ModItemsRegistry.CHERRY_BIG_ARMCHAIR);
                         entries.add(ModItemsRegistry.JUNGLE_BIG_ARMCHAIR);
+                        entries.add(ModItemsRegistry.ACACIA_BIG_ARMCHAIR);
                         entries.add(ModItemsRegistry.DARK_OAK_BIG_ARMCHAIR);
+                        entries.add(ModItemsRegistry.MANGROVE_BIG_ARMCHAIR);
+                        entries.add(ModItemsRegistry.CHERRY_BIG_ARMCHAIR);
+                        entries.add(ModItemsRegistry.BAMBOO_BIG_ARMCHAIR);
                         entries.add(ModItemsRegistry.CRIMSON_BIG_ARMCHAIR);
                         entries.add(ModItemsRegistry.WARPED_BIG_ARMCHAIR);
-                        entries.add(ModItemsRegistry.MANGROVE_BIG_ARMCHAIR);
-                        entries.add(ModItemsRegistry.BAMBOO_BIG_ARMCHAIR);
 
                         entries.add(ModItemsRegistry.PLUMBUM_INGOT);
                         entries.add(ModItemsRegistry.RAW_PLUMBUM);

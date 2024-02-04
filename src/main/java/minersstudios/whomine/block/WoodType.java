@@ -1,28 +1,37 @@
 package minersstudios.whomine.block;
 
+import minersstudios.whomine.WhoMineMod;
+import minersstudios.whomine.item.ModItemsRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public enum WoodType implements StringIdentifiable {
-    OAK("oak", 1,BlockSoundGroup.WOOD),
-    SPRUCE("spruce", 2, BlockSoundGroup.WOOD),
-    BIRCH("birch", 3, BlockSoundGroup.WOOD),
-    ACACIA("acacia", 4, BlockSoundGroup.WOOD),
-    CHERRY("cherry", 5, BlockSoundGroup.CHERRY_WOOD),
-    JUNGLE("jungle", 6, BlockSoundGroup.WOOD),
-    DARK_OAK("dark_oak", 7, BlockSoundGroup.WOOD),
-    CRIMSON("crimson", 8, BlockSoundGroup.NETHER_WOOD),
-    WARPED("warped", 9, BlockSoundGroup.NETHER_WOOD),
-    MANGROVE("mangrove", 10, BlockSoundGroup.WOOD),
-    BAMBOO("bamboo", 11, BlockSoundGroup.BAMBOO_WOOD);
+    OAK("oak", BlockSoundGroup.WOOD),
+    SPRUCE("spruce", BlockSoundGroup.WOOD),
+    BIRCH("birch", BlockSoundGroup.WOOD),
+    ACACIA("acacia", BlockSoundGroup.WOOD),
+    JUNGLE("jungle", BlockSoundGroup.WOOD),
+    DARK_OAK("dark_oak", BlockSoundGroup.WOOD),
+    MANGROVE("mangrove", BlockSoundGroup.WOOD),
+    CHERRY("cherry", BlockSoundGroup.CHERRY_WOOD),
+    BAMBOO("bamboo", BlockSoundGroup.BAMBOO_WOOD),
+    CRIMSON("crimson", BlockSoundGroup.NETHER_WOOD),
+    WARPED("warped", BlockSoundGroup.NETHER_WOOD);
 
     private final String name;
-    private final Integer id;
     private final BlockSoundGroup soundGroup;
 
-    WoodType(String name, int id, BlockSoundGroup soundGroup) {
+    WoodType(String name, BlockSoundGroup soundGroup) {
         this.name = name;
-        this.id = id;
         this.soundGroup = soundGroup;
     }
 
@@ -30,12 +39,15 @@ public enum WoodType implements StringIdentifiable {
         return name;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
     public BlockSoundGroup getSoundGroup() {
         return soundGroup;
+    }
+
+    public static ItemStack getWoodBlockItem(BlockState state) {
+        WoodType woodType = state.get(WoodTypeProperty.of("wood_type"));
+
+        String id = WhoMineMod.MOD_ID + ":" + woodType.getName() + "_" + Registries.BLOCK.getId(state.getBlock()).getPath();
+        return Registries.ITEM.get(new Identifier(id)).getDefaultStack();
     }
 
     @Override

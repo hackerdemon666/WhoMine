@@ -16,27 +16,15 @@ import net.minecraft.state.property.Property;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldView;
 import net.minecraft.world.event.GameEvent;
 
 import java.util.Iterator;
 
-public class DyeableBlockItem extends BlockItem implements DyeableItem {
+public class WoodBlockItem extends BlockItem {
     private final WoodType woodType;
-    public DyeableBlockItem(Block block, Item.Settings settings, WoodType woodType) {
+    public WoodBlockItem(Block block, Item.Settings settings, WoodType woodType) {
         super(block, settings);
         this.woodType = woodType;
-    }
-
-    public boolean isPainted(ItemStack stack) {
-        NbtCompound nbtCompound = stack.getSubNbt("BlockEntityTag") == null ? stack.getSubNbt("display") : DyeableBlockItem.getBlockEntityNbt(stack).getCompound("tag").getCompound("display");
-        return nbtCompound != null && nbtCompound.contains("color", 99);
-    }
-
-    @Override
-    public int getColor(ItemStack stack) {
-        NbtCompound nbtCompound = stack.getSubNbt("BlockEntityTag") == null ? stack.getSubNbt("display") : DyeableBlockItem.getBlockEntityNbt(stack).getCompound("tag").getCompound("display");
-        return nbtCompound != null && nbtCompound.contains("color", 99) ? nbtCompound.getInt("color") : 10511680;
     }
 
     @Override
@@ -116,6 +104,8 @@ public class DyeableBlockItem extends BlockItem implements DyeableItem {
     }
 
     private static <T extends Comparable<T>> BlockState with(BlockState state, Property<T> property, String name) {
-        return property.parse(name).map((value) -> state.with(property, value)).orElse(state);
+        return property.parse(name).map((value) -> {
+            return state.with(property, value);
+        }).orElse(state);
     }
 }

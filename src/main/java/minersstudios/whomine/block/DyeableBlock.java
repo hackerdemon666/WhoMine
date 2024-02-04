@@ -1,17 +1,12 @@
 package minersstudios.whomine.block;
 
 import minersstudios.whomine.item.DyeableBlockItem;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockEntityProvider;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.DyeableItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
@@ -19,10 +14,11 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class DyeableBlock extends Block implements BlockEntityProvider {
-    public ModBlockCollisionType CollisionType;
-    public DyeableBlock(Settings settings, ModBlockCollisionType CollisionType) {
+    public ModBlockCollisionType collisionType;
+
+    public DyeableBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);
-        this.CollisionType = CollisionType;
+        this.collisionType = collisionType;
     }
 
     @Override
@@ -32,35 +28,28 @@ public class DyeableBlock extends Block implements BlockEntityProvider {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext ctx) {
-        return this.CollisionType.getBlockCollision(state);
+        return this.collisionType.getBlockCollision(state);
     }
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         super.onPlaced(world, pos, state, placer, stack);
-        BlockEntity blockEntity = world.getBlockEntity(pos);
-        NbtCompound nbtCompound = stack.getSubNbt("display");
-        if (blockEntity instanceof DyeableBlockEntity) {
-            if (nbtCompound != null) {
-                ((DyeableBlockEntity) blockEntity).setColor(((DyeableBlockItem) stack.getItem()).getColor(stack), placer);
-            } else {
-                ((DyeableBlockEntity) blockEntity).setHasColor(false, placer);
-            }
-            blockEntity.markDirty();
-        }
+        if (!(stack.getItem() instanceof DyeableBlockItem item)) return;
+        int color = stack.getSubNbt("BlockEntityTag") != null ? DyeableBlockItem.getBlockEntityNbt(stack).getCompound("tag").getCompound("display").getInt("color") : item.getColor(stack);
+
+        DyeableBlockEntity blockEntity = (DyeableBlockEntity) world.getBlockEntity(pos);
+        if (blockEntity == null) return;
+        if (item.isPainted(stack)) blockEntity.setColor(color, placer);
     }
 
     @Override
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
         if (world.isClient) return;
         if (blockEntity == null) return;
-        Block.getDroppedStacks(state, (ServerWorld) world, pos, blockEntity, null, null)
-                .forEach((itemStack) -> {
-                    if (itemStack.getItem() instanceof DyeableBlockItem && ((DyeableBlockEntity) blockEntity).hasColor()) {
-                        ((DyeableItem) itemStack.getItem()).setColor(itemStack, ((DyeableBlockEntity) blockEntity).getColor());
-                    }
-                    Block.dropStack(world, pos, itemStack);
-                });
-        state.onStacksDropped((ServerWorld) world, pos, null, false);
+
+        if (stack.getItem() instanceof DyeableBlockItem && ((DyeableBlockEntity) blockEntity).isPainted()) {
+            ((DyeableItem) stack.getItem()).setColor(stack, ((DyeableBlockEntity) blockEntity).getColor());
+        }
+        Block.dropStack(world, pos, stack);
     }
 }

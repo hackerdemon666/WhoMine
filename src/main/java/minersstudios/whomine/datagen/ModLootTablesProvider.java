@@ -35,7 +35,7 @@ public class ModLootTablesProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocksRegistry.PLUMBUM_BLOCK);
         addDrop(ModBlocksRegistry.RAW_PLUMBUM_BLOCK);
 
-        addDrop(ModBlocksRegistry.SMALL_CHAIR, ModItemsRegistry.SMALL_CHAIR);
+//        addDrop(ModBlocksRegistry.SMALL_CHAIR, ModItemsRegistry.SMALL_CHAIR);
     }
 
     public LootTable.Builder copperLikeOreDrops(Block drop, Item item) {
