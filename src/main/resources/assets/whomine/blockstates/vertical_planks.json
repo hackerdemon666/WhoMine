@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "wood_type=oak": { "model": "whomine:item/oak_vertical_planks"},
+    "wood_type=spruce": { "model": "whomine:item/spruce_vertical_planks"},
+    "wood_type=birch": { "model": "whomine:item/birch_vertical_planks"},
+    "wood_type=jungle": { "model": "whomine:item/jungle_vertical_planks"},
+    "wood_type=acacia": { "model": "whomine:item/acacia_vertical_planks"},
+    "wood_type=dark_oak": { "model": "whomine:item/dark_oak_vertical_planks"},
+    "wood_type=mangrove": { "model": "whomine:item/mangrove_vertical_planks"},
+    "wood_type=cherry": { "model": "whomine:item/cherry_vertical_planks"},
+    "wood_type=bamboo": { "model": "whomine:item/oak_vertical_planks"},
+    "wood_type=crimson": { "model": "whomine:item/crimson_vertical_planks"},
+    "wood_type=warped": { "model": "whomine:item/warped_vertical_planks"}
+  }
+}

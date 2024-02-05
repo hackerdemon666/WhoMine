@@ -1,6 +1,6 @@
 package minersstudios.whomine.block;
 
-import minersstudios.whomine.item.DyeableBlockItem;
+import minersstudios.whomine.item.DyeableWoodBlockItem;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
@@ -54,8 +54,8 @@ public class DyeableWoodBlock extends Block implements BlockEntityProvider {
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         super.onPlaced(world, pos, state, placer, stack);
-        if (!(stack.getItem() instanceof DyeableBlockItem item)) return;
-        int color = stack.getSubNbt("BlockEntityTag") != null ? DyeableBlockItem.getBlockEntityNbt(stack).getCompound("tag").getCompound("display").getInt("color") : item.getColor(stack);
+        if (!(stack.getItem() instanceof DyeableWoodBlockItem item)) return;
+        int color = stack.getSubNbt("BlockEntityTag") != null ? DyeableWoodBlockItem.getBlockEntityNbt(stack).getCompound("tag").getCompound("display").getInt("color") : item.getColor(stack);
 
         DyeableBlockEntity blockEntity = (DyeableBlockEntity) world.getBlockEntity(pos);
         if (blockEntity == null) return;

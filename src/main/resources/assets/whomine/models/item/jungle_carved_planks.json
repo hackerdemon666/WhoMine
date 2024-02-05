@@ -1,0 +1,8 @@
+{
+	"parent":"block/cube_column",
+	"textures":{
+		"side":"whomine:block/jungle_carved_side",
+		"end":"whomine:block/jungle_carved_top",
+		"particle":"whomine:block/jungle_carved_side"
+	}
+}

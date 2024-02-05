@@ -20,7 +20,11 @@ public class ModBlocksRegistry {
     public static final Block PLUMBUM_BLOCK = registerBlock("plumbum_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
     public static final Block RAW_PLUMBUM_BLOCK = registerBlock("raw_plumbum_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
 
-    public static final Block COLOR_BLOCK = registerDyeableBlock("color_block", new DyeableBlock(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL).nonOpaque(), ModBlockCollisionType.DEFAULT_BLOCK));
+    public static final Block COLOR_BLOCK = registerDyeableBlock("color_block", new DyeableBlock(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL), ModBlockCollisionType.TEST_BLOCK));
+
+    public static final Block CARVED_PLANKS = registerBlock("carved_planks", new WoodBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS), ModBlockCollisionType.DEFAULT_BLOCK));
+    public static final Block FRAMED_PLANKS = registerBlock("framed_planks", new WoodBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS), ModBlockCollisionType.DEFAULT_BLOCK));
+    public static final Block VERTICAL_PLANKS = registerBlock("vertical_planks", new WoodBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS), ModBlockCollisionType.DEFAULT_BLOCK));
 
     public static final Block BIG_ARMCHAIR = registerDyeableBlock("big_armchair", new DyeableWoodHorizontalFacingBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(0.75f).nonOpaque(), ModBlockCollisionType.BIG_ARMCHAIR));
 

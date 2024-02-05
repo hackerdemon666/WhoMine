@@ -17,8 +17,7 @@ public class DyeableBlock extends Block implements BlockEntityProvider {
     public ModBlockCollisionType collisionType;
     public DyeableBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);
-        this.collisionType = collisionType;
-    }
+        this.collisionType = collisionType;}
 
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
@@ -45,11 +44,9 @@ public class DyeableBlock extends Block implements BlockEntityProvider {
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
         if (world.isClient) return;
         if (blockEntity == null) return;
-
         ItemStack dropStack = new ItemStack(state.getBlock().asItem());
-        if (((DyeableBlockEntity) blockEntity).isPainted()) {
-            ((DyeableItem) dropStack.getItem()).setColor(dropStack, ((DyeableBlockEntity) blockEntity).getColor());
-        }
+
+        if (((DyeableBlockEntity) blockEntity).isPainted()) ((DyeableItem) dropStack.getItem()).setColor(dropStack, ((DyeableBlockEntity) blockEntity).getColor());
         Block.dropStack(world, pos, dropStack);
     }
 }

@@ -10,15 +10,21 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 public class WoodBlock extends Block {
     public static final WoodTypeProperty WOOD_TYPE = WoodTypeProperty.of("wood_type");
-    public ModBlockCollisionType CollisionType;
-    public WoodBlock(Settings settings, ModBlockCollisionType CollisionType) {
+    public ModBlockCollisionType collisionType;
+    public WoodBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);
-        this.CollisionType = CollisionType;
+        this.collisionType = collisionType;
         setDefaultState(getDefaultState().with(WOOD_TYPE, WoodType.OAK));
+    }
+
+    @Override
+    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
+        return WoodType.getWoodBlockItem(state);
     }
 
     @Override
@@ -33,7 +39,7 @@ public class WoodBlock extends Block {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext ctx) {
-        return this.CollisionType.getBlockCollision(state);
+        return this.collisionType.getBlockCollision(state);
     }
 
     @Override

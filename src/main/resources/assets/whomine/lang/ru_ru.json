@@ -11,26 +11,38 @@
 
   "block.whomine.plumbum_ore": "Свинцовая руда",
   "block.whomine.plumbum_block": "Свинцовый блок",
-  "block.whomine.raw_plumbum_block": "Сырой свинцовый блок",
+  "block.whomine.raw_plumbum_block": "Блок рудного свинца",
 
   "block.whomine.color_block": "Цветной блок",
   "item.whomine.color_block": "Цветной блок",
 
   "block.whomine.oak_big_armchair": "Кресло",
-
   "item.whomine.oak_big_armchair": "Дубовое кресло",
   "item.whomine.spruce_big_armchair": "Еловое кресло",
   "item.whomine.birch_big_armchair": "Берёзовое кресло",
-  "item.whomine.acacia_big_armchair": "Акациевое кресло",
-  "item.whomine.cherry_big_armchair": "Вишнёвое кресло",
   "item.whomine.jungle_big_armchair": "Кресло из тропического дерева",
+  "item.whomine.acacia_big_armchair": "Акациевое кресло",
   "item.whomine.dark_oak_big_armchair": "Кресло из тёмного дуба",
+  "item.whomine.mangrove_big_armchair": "Мангровое кресло",
+  "item.whomine.cherry_big_armchair": "Вишнёвое кресло",
+  "item.whomine.bamboo_big_armchair": "Бамбуковое кресло",
   "item.whomine.crimson_big_armchair": "Багровое кресло",
   "item.whomine.warped_big_armchair": "Искажённое кресло",
-  "item.whomine.mangrove_big_armchair": "Мангровое кресло",
-  "item.whomine.bamboo_big_armchair": "Бамбуковое кресло",
 
-  "block.whomine.small_chair": "Стул",
+  "block.whomine.carved_planks": "Резные доски",
+  "item.whomine.oak_carved_planks": "Дубовые резные доски",
+  "item.whomine.spruce_carved_planks": "Еловые резные доски",
+  "item.whomine.birch_carved_planks": "Берёзовые резные доски",
+  "item.whomine.jungle_carved_planks": "Резные доски из тропического дерева",
+  "item.whomine.acacia_carved_planks": "Акациевые резные доски",
+  "item.whomine.dark_oak_carved_planks": "Резные доски из тёмного дуб",
+  "item.whomine.mangrove_carved_planks": "Мангровые резные доски",
+  "item.whomine.cherry_carved_planks": "Вишнёвые резные доски",
+  "item.whomine.bamboo_carved_planks": "Бамбуковые резные доски",
+  "item.whomine.crimson_carved_planks": "Багровые резные доски",
+  "item.whomine.warped_carved_planks": "Искажённые резные доски",
 
-  "itemgroup.whomine": "WhoMine"
+  "itemgroup.whomine_block": "Блоки WhoMine",
+  "itemgroup.whomine_furniture": "Мебель WhoMine",
+  "itemgroup.whomine_other": "Разное WhoMine"
 }

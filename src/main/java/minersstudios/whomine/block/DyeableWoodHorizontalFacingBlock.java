@@ -61,7 +61,6 @@ public class DyeableWoodHorizontalFacingBlock extends HorizontalFacingBlock impl
         return this.collisionType.getBlockCollision(state);
     }
 
-
     @Override
     protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
         return null;

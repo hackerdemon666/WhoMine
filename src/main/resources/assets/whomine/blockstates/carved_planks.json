@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "wood_type=oak": { "model": "whomine:item/oak_carved_planks"},
+    "wood_type=spruce": { "model": "whomine:item/spruce_carved_planks"},
+    "wood_type=birch": { "model": "whomine:item/birch_carved_planks"},
+    "wood_type=jungle": { "model": "whomine:item/jungle_carved_planks"},
+    "wood_type=acacia": { "model": "whomine:item/acacia_carved_planks"},
+    "wood_type=dark_oak": { "model": "whomine:item/dark_oak_carved_planks"},
+    "wood_type=mangrove": { "model": "whomine:item/mangrove_carved_planks"},
+    "wood_type=cherry": { "model": "whomine:item/oak_carved_planks"},
+    "wood_type=bamboo": { "model": "whomine:item/oak_carved_planks"},
+    "wood_type=crimson": { "model": "whomine:item/crimson_carved_planks"},
+    "wood_type=warped": { "model": "whomine:item/warped_carved_planks"}
+  }
+}

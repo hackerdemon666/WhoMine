@@ -1,0 +1,8 @@
+{
+	"parent":"block/cube_column",
+	"textures":{
+		"side":"whomine:block/crimson_carved_side",
+		"end":"whomine:block/crimson_carved_top",
+		"particle":"whomine:block/crimson_carved_side"
+	}
+}

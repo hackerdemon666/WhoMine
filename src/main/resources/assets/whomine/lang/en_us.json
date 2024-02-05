@@ -17,20 +17,32 @@
   "item.whomine.color_block": "Color Block",
 
   "block.whomine.oak_big_armchair": "Armchair",
-
   "item.whomine.oak_big_armchair": "Oak armchair",
   "item.whomine.spruce_big_armchair": "Spruce armchair",
   "item.whomine.birch_big_armchair": "Birch armchair",
-  "item.whomine.acacia_big_armchair": "Acacia armchair",
-  "item.whomine.cherry_big_armchair": "Cherry armchair",
   "item.whomine.jungle_big_armchair": "Jungle armchair",
+  "item.whomine.acacia_big_armchair": "Acacia armchair",
   "item.whomine.dark_oak_big_armchair": "Dark oak armchair",
+  "item.whomine.mangrove_big_armchair": "Mangrove armchair",
+  "item.whomine.cherry_big_armchair": "Cherry armchair",
+  "item.whomine.bamboo_big_armchair": "Bamboo armchair",
   "item.whomine.crimson_big_armchair": "Crimson armchair",
   "item.whomine.warped_big_armchair": "Warped armchair",
-  "item.whomine.mangrove_big_armchair": "Mangrove armchair",
-  "item.whomine.bamboo_big_armchair": "Bamboo armchair",
 
-  "block.whomine.small_chair": "Chair",
+  "block.whomine.carved_planks": "Carved planks",
+  "item.whomine.oak_carved_planks": "Oak carved planks",
+  "item.whomine.spruce_carved_planks": "Spruce armchair",
+  "item.whomine.birch_carved_planks": "Birch armchair",
+  "item.whomine.jungle_carved_planks": "Jungle armchair",
+  "item.whomine.acacia_carved_planks": "Acacia armchair",
+  "item.whomine.dark_oak_carved_planks": "Dark oak armchair",
+  "item.whomine.mangrove_carved_planks": "Mangrove armchair",
+  "item.whomine.cherry_carved_planks": "Cherry armchair",
+  "item.whomine.bamboo_carved_planks": "Bamboo armchair",
+  "item.whomine.crimson_carved_planks": "Crimson armchair",
+  "item.whomine.warped_carved_planks": "Warped armchair",
 
-  "itemgroup.whomine": "WhoMine"
+  "itemgroup.whomine_block": "WhoMine Block",
+  "itemgroup.whomine_furniture": "WhoMine Furniture",
+  "itemgroup.whomine_other": "WhoMine Other"
 }

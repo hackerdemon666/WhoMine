@@ -46,8 +46,8 @@ public enum WoodType implements StringIdentifiable {
     public static ItemStack getWoodBlockItem(BlockState state) {
         WoodType woodType = state.get(WoodTypeProperty.of("wood_type"));
 
-        String id = WhoMineMod.MOD_ID + ":" + woodType.getName() + "_" + Registries.BLOCK.getId(state.getBlock()).getPath();
-        return Registries.ITEM.get(new Identifier(id)).getDefaultStack();
+        Identifier id = new Identifier(WhoMineMod.MOD_ID, woodType.getName() + "_" + Registries.BLOCK.getId(state.getBlock()).getPath());
+        return Registries.ITEM.get(id).getDefaultStack();
     }
 
     @Override
