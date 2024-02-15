@@ -1,5 +1,7 @@
 package minersstudios.whomine.block;
 
+import minersstudios.whomine.block.properties.WoodType;
+import minersstudios.whomine.block.properties.WoodTypeProperty;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,12 +21,14 @@ public class WoodBlock extends Block {
     public WoodBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);
         this.collisionType = collisionType;
-        setDefaultState(getDefaultState().with(WOOD_TYPE, WoodType.OAK));
+        setDefaultState(getDefaultState()
+                .with(WOOD_TYPE, WoodType.OAK)
+        );
     }
 
     @Override
     public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
-        return WoodType.getWoodBlockItem(state);
+        return minersstudios.whomine.block.properties.WoodType.getWoodBlockItem(state);
     }
 
     @Override
@@ -46,7 +50,7 @@ public class WoodBlock extends Block {
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
         if (world.isClient) return;
 
-        ItemStack dropStack = WoodType.getWoodBlockItem(state);
+        ItemStack dropStack = minersstudios.whomine.block.properties.WoodType.getWoodBlockItem(state);
         Block.dropStack(world, pos, dropStack);
     }
 }

@@ -42,6 +42,9 @@
   "item.whomine.crimson_carved_planks": "Багровые резные доски",
   "item.whomine.warped_carved_planks": "Искажённые резные доски",
 
+  "effect.whomine.radiation": "Радиация",
+  "death.attack.radiation": "%1$s был облучён радиацией",
+
   "itemgroup.whomine_block": "Блоки WhoMine",
   "itemgroup.whomine_furniture": "Мебель WhoMine",
   "itemgroup.whomine_other": "Разное WhoMine"

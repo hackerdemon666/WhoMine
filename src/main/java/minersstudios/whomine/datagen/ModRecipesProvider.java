@@ -1,13 +1,18 @@
 package minersstudios.whomine.datagen;
 
+import minersstudios.whomine.WhoMineMod;
+import minersstudios.whomine.block.properties.WoodType;
+import minersstudios.whomine.block.properties.WoodTypeProperty;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import minersstudios.whomine.block.ModBlocksRegistry;
 import minersstudios.whomine.item.ModItemsRegistry;
+import net.minecraft.block.BlockState;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.*;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -32,14 +37,22 @@ public class ModRecipesProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItemsRegistry.RAW_PLUMBUM, RecipeCategory.DECORATIONS,
                 ModBlocksRegistry.RAW_PLUMBUM_BLOCK);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItemsRegistry.OAK_BIG_ARMCHAIR, 1)
-                .pattern("WW ")
-                .pattern("WLW")
-                .pattern("W W")
-                .input('W', Items.OAK_PLANKS)
-                .input('L', Items.LEATHER)
-                .criterion(hasItem(Items.OAK_PLANKS), conditionsFromItem(Items.OAK_PLANKS))
-                .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItemsRegistry.OAK_BIG_ARMCHAIR)));
+        // Wooden Recipes
+        for (int i = 0; i < WoodType.values().length; i++) {
+            ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItemsRegistry.BIG_ARMCHAIR_ITEMS[i], 1)
+                    .pattern("WW ")
+                    .pattern("WLW")
+                    .pattern("W W")
+                    .input('W', getWoodItem("planks", i))
+                    .input('L', Items.LEATHER)
+                    .criterion(hasItem(getWoodItem("planks", i)), conditionsFromItem(getWoodItem("planks", i)))
+                    .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
+                    .offerTo(exporter, new Identifier(getRecipeName(ModItemsRegistry.BIG_ARMCHAIR_ITEMS[i])));
+        }
+    }
+
+    private static Item getWoodItem(String block, int woodId) {
+        Identifier id = new Identifier(WoodType.getById(woodId).getName() + "_" + block);
+        return Registries.ITEM.get(id);
     }
 }

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "W": {
+      "item": "minecraft:acacia_planks"
+    }
+  },
+  "pattern": [
+    "WW ",
+    "WLW",
+    "W W"
+  ],
+  "result": {
+    "item": "whomine:acacia_big_armchair"
+  }
+}

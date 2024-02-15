@@ -42,6 +42,9 @@
   "item.whomine.crimson_carved_planks": "Crimson armchair",
   "item.whomine.warped_carved_planks": "Warped armchair",
 
+  "effect.whomine.radiation": "Radiation",
+  "death.attack.radiation": "%1$s was exposed to radiation",
+
   "itemgroup.whomine_block": "WhoMine Block",
   "itemgroup.whomine_furniture": "WhoMine Furniture",
   "itemgroup.whomine_other": "WhoMine Other"

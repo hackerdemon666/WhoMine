@@ -1,6 +1,8 @@
 package minersstudios.whomine.block;
 
 import com.mojang.serialization.MapCodec;
+import minersstudios.whomine.block.properties.WoodType;
+import minersstudios.whomine.block.properties.WoodTypeProperty;
 import minersstudios.whomine.item.DyeableBlockItem;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -12,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
+import net.minecraft.state.property.Property;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -21,13 +24,14 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implements BlockEntityProvider {
-    public static final WoodTypeProperty woodType = WoodTypeProperty.of("wood_type");
     public ModBlockCollisionType collisionType;
 
     public DyeableHorizontalFacingBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);
         this.collisionType = collisionType;
-        setDefaultState(getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(woodType, WoodType.OAK));
+        setDefaultState(getDefaultState()
+                .with(Properties.HORIZONTAL_FACING, Direction.NORTH)
+        );
     }
 
     @Override
@@ -37,18 +41,12 @@ public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implemen
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(Properties.HORIZONTAL_FACING);
-        builder.add(woodType);
+        builder.add(new Property[]{Properties.HORIZONTAL_FACING});
     }
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         return super.getPlacementState(ctx).with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing());
-    }
-
-    @Override
-    public BlockSoundGroup getSoundGroup(BlockState state) {
-        return state.get(woodType).getSoundGroup();
     }
 
     @Override
@@ -60,7 +58,6 @@ public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implemen
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext ctx) {
         return this.collisionType.getBlockCollision(state);
     }
-
 
     @Override
     protected MapCodec<? extends HorizontalFacingBlock> getCodec() {

@@ -1,5 +1,7 @@
 package minersstudios.whomine.block;
 
+import minersstudios.whomine.block.properties.WoodType;
+import minersstudios.whomine.block.properties.WoodTypeProperty;
 import minersstudios.whomine.item.DyeableWoodBlockItem;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -17,13 +19,15 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 public class DyeableWoodBlock extends Block implements BlockEntityProvider {
-    public static final WoodTypeProperty woodType = WoodTypeProperty.of("wood_type");
+    public static final WoodTypeProperty WOOD_TYPE = WoodTypeProperty.of("wood_type");
     public ModBlockCollisionType collisionType;
 
     public DyeableWoodBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);
         this.collisionType = collisionType;
-        setDefaultState(getDefaultState().with(woodType, WoodType.OAK));
+        setDefaultState(getDefaultState()
+                .with(WOOD_TYPE, WoodType.OAK)
+        );
     }
 
     @Override
@@ -33,12 +37,12 @@ public class DyeableWoodBlock extends Block implements BlockEntityProvider {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(woodType);
+        builder.add(WOOD_TYPE);
     }
 
     @Override
     public BlockSoundGroup getSoundGroup(BlockState state) {
-        return state.get(woodType).getSoundGroup();
+        return state.get(WOOD_TYPE).getSoundGroup();
     }
 
     @Override
@@ -66,7 +70,7 @@ public class DyeableWoodBlock extends Block implements BlockEntityProvider {
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
         if (world.isClient) return;
         if (blockEntity == null) return;
-        ItemStack dropStack = WoodType.getWoodBlockItem(state);
+        ItemStack dropStack = minersstudios.whomine.block.properties.WoodType.getWoodBlockItem(state);
 
         if (((DyeableBlockEntity) blockEntity).isPainted()) ((DyeableItem) dropStack.getItem()).setColor(dropStack, ((DyeableBlockEntity) blockEntity).getColor());
         Block.dropStack(world, pos, dropStack);

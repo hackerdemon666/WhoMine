@@ -1,6 +1,8 @@
 package minersstudios.whomine.block;
 
 import com.mojang.serialization.MapCodec;
+import minersstudios.whomine.block.properties.WoodType;
+import minersstudios.whomine.block.properties.WoodTypeProperty;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -9,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
+import net.minecraft.state.property.Property;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -23,7 +26,10 @@ public class WoodHorizontalFacingBlock extends HorizontalFacingBlock {
     public WoodHorizontalFacingBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);
         this.collisionType = collisionType;
-        setDefaultState(getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(WOOD_TYPE, WoodType.OAK));
+        setDefaultState(getDefaultState()
+                .with(Properties.HORIZONTAL_FACING, Direction.NORTH)
+                .with(WOOD_TYPE, WoodType.OAK)
+        );
     }
 
     @Override
@@ -33,8 +39,7 @@ public class WoodHorizontalFacingBlock extends HorizontalFacingBlock {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(Properties.HORIZONTAL_FACING);
-        builder.add(WOOD_TYPE);
+        builder.add(new Property[]{Properties.HORIZONTAL_FACING, WOOD_TYPE});
     }
 
     @Override
@@ -61,7 +66,7 @@ public class WoodHorizontalFacingBlock extends HorizontalFacingBlock {
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
         if (world.isClient) return;
 
-        ItemStack dropStack = WoodType.getWoodBlockItem(state);
+        ItemStack dropStack = minersstudios.whomine.block.properties.WoodType.getWoodBlockItem(state);
         Block.dropStack(world, pos, dropStack);
     }
 }

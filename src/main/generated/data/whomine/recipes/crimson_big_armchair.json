@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "W": {
+      "item": "minecraft:crimson_planks"
+    }
+  },
+  "pattern": [
+    "WW ",
+    "WLW",
+    "W W"
+  ],
+  "result": {
+    "item": "whomine:crimson_big_armchair"
+  }
+}

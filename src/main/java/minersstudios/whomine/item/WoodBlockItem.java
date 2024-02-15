@@ -1,7 +1,7 @@
 package minersstudios.whomine.item;
 
-import minersstudios.whomine.block.WoodType;
-import minersstudios.whomine.block.WoodTypeProperty;
+import minersstudios.whomine.block.properties.WoodType;
+import minersstudios.whomine.block.properties.WoodTypeProperty;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

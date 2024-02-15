@@ -2,7 +2,13 @@ package minersstudios.whomine.item;
 
 import minersstudios.whomine.WhoMineMod;
 import minersstudios.whomine.block.ModBlocksRegistry;
+import minersstudios.whomine.block.properties.WoodType;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.item.DyeableItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -10,22 +16,16 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import java.util.ArrayList;
+
 public class ModItemGroupsRegistry {
     public static final ItemGroup WHOMINE_BLOCK_GROUP = Registry.register(Registries.ITEM_GROUP,
         new Identifier(WhoMineMod.MOD_ID, "whomine_block_group"),
         FabricItemGroup.builder().displayName(Text.translatable("itemgroup.whomine_block"))
             .icon(() -> new ItemStack(ModItemsRegistry.COLOR_BLOCK)).entries((displayContext, entries) -> {
-                entries.add(ModItemsRegistry.OAK_CARVED_PLANKS);
-                entries.add(ModItemsRegistry.SPRUCE_CARVED_PLANKS);
-                entries.add(ModItemsRegistry.BIRCH_CARVED_PLANKS);
-                entries.add(ModItemsRegistry.JUNGLE_CARVED_PLANKS);
-                entries.add(ModItemsRegistry.ACACIA_CARVED_PLANKS);
-                entries.add(ModItemsRegistry.DARK_OAK_CARVED_PLANKS);
-                entries.add(ModItemsRegistry.MANGROVE_CARVED_PLANKS);
-                entries.add(ModItemsRegistry.CHERRY_CARVED_PLANKS);
-                entries.add(ModItemsRegistry.BAMBOO_CARVED_PLANKS);
-                entries.add(ModItemsRegistry.CRIMSON_CARVED_PLANKS);
-                entries.add(ModItemsRegistry.WARPED_CARVED_PLANKS);
+                for (int i = 0; i < WoodType.values().length; i++) {
+                    entries.add(ModItemsRegistry.CARVED_PLANKS_ITEMS[i]);
+                }
 
                 entries.add(ModBlocksRegistry.PLUMBUM_ORE);
                 entries.add(ModBlocksRegistry.PLUMBUM_BLOCK);
@@ -38,18 +38,13 @@ public class ModItemGroupsRegistry {
     public static final ItemGroup WHOMINE_FURNITURE_GROUP = Registry.register(Registries.ITEM_GROUP,
         new Identifier(WhoMineMod.MOD_ID, "whomine_furniture_group_furniture"),
         FabricItemGroup.builder().displayName(Text.translatable("itemgroup.whomine_furniture"))
-            .icon(() -> new ItemStack(ModItemsRegistry.OAK_BIG_ARMCHAIR)).entries((displayContext, entries) -> {
-                entries.add(ModItemsRegistry.OAK_BIG_ARMCHAIR);
-                entries.add(ModItemsRegistry.SPRUCE_BIG_ARMCHAIR);
-                entries.add(ModItemsRegistry.BIRCH_BIG_ARMCHAIR);
-                entries.add(ModItemsRegistry.JUNGLE_BIG_ARMCHAIR);
-                entries.add(ModItemsRegistry.ACACIA_BIG_ARMCHAIR);
-                entries.add(ModItemsRegistry.DARK_OAK_BIG_ARMCHAIR);
-                entries.add(ModItemsRegistry.MANGROVE_BIG_ARMCHAIR);
-                entries.add(ModItemsRegistry.CHERRY_BIG_ARMCHAIR);
-                entries.add(ModItemsRegistry.BAMBOO_BIG_ARMCHAIR);
-                entries.add(ModItemsRegistry.CRIMSON_BIG_ARMCHAIR);
-                entries.add(ModItemsRegistry.WARPED_BIG_ARMCHAIR);
+            .icon(() -> new ItemStack(ModItemsRegistry.BIG_ARMCHAIR_ITEMS[0])).entries((displayContext, entries) -> {
+                for (int i = 0; i < WoodType.values().length; i++) {
+                    entries.add(ModItemsRegistry.BIG_ARMCHAIR_ITEMS[i]);
+                }
+                for (int i = 0; i < WoodType.values().length; i++) {
+                    entries.add(ModItemsRegistry.COUCH_ITEMS[i]);
+                }
             }).build()
     );
 
@@ -65,6 +60,16 @@ public class ModItemGroupsRegistry {
                         entries.add(ModItemsRegistry.RAW_PLUMBUM);
                     }).build()
     );
+
+//    public static ArrayList<Item> getWoodItems(Block block){
+//        ArrayList<Item> WoodItems = new ArrayList();
+//        for (int i = 0; i < WoodType.values().length; i++) {
+//            WoodType woodType = WoodType.getById(i);
+//            Identifier id = new Identifier(WhoMineMod.MOD_ID, woodType.getName() + "_" + Registries.BLOCK.getId(block).getPath());
+//            WoodItems.add(Registries.ITEM.get(id));
+//        }
+//        return WoodItems;
+//    }
 
     public static void register() {}
 }

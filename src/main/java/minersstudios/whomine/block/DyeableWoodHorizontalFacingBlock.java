@@ -1,6 +1,8 @@
 package minersstudios.whomine.block;
 
 import com.mojang.serialization.MapCodec;
+import minersstudios.whomine.block.properties.WoodType;
+import minersstudios.whomine.block.properties.WoodTypeProperty;
 import minersstudios.whomine.item.DyeableWoodBlockItem;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -12,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
+import net.minecraft.state.property.Property;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -21,13 +24,16 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 public class DyeableWoodHorizontalFacingBlock extends HorizontalFacingBlock implements BlockEntityProvider {
-    public static final WoodTypeProperty woodType = WoodTypeProperty.of("wood_type");
+    public static final WoodTypeProperty WOOD_TYPE = WoodTypeProperty.of("wood_type");
     public ModBlockCollisionType collisionType;
 
     public DyeableWoodHorizontalFacingBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);
         this.collisionType = collisionType;
-        setDefaultState(getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(woodType, WoodType.OAK));
+        setDefaultState(getDefaultState()
+                .with(Properties.HORIZONTAL_FACING, Direction.NORTH)
+                .with(WOOD_TYPE, WoodType.OAK)
+        );
     }
 
     @Override
@@ -37,8 +43,7 @@ public class DyeableWoodHorizontalFacingBlock extends HorizontalFacingBlock impl
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(Properties.HORIZONTAL_FACING);
-        builder.add(woodType);
+        builder.add(new Property[]{Properties.HORIZONTAL_FACING, WOOD_TYPE});
     }
 
     @Override
@@ -48,7 +53,7 @@ public class DyeableWoodHorizontalFacingBlock extends HorizontalFacingBlock impl
 
     @Override
     public BlockSoundGroup getSoundGroup(BlockState state) {
-        return state.get(woodType).getSoundGroup();
+        return state.get(WOOD_TYPE).getSoundGroup();
     }
 
     @Override
@@ -81,7 +86,7 @@ public class DyeableWoodHorizontalFacingBlock extends HorizontalFacingBlock impl
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
         if (world.isClient) return;
         if (blockEntity == null) return;
-        ItemStack dropStack = WoodType.getWoodBlockItem(state);
+        ItemStack dropStack = minersstudios.whomine.block.properties.WoodType.getWoodBlockItem(state);
         if (((DyeableBlockEntity) blockEntity).isPainted()) ((DyeableItem) dropStack.getItem()).setColor(dropStack, ((DyeableBlockEntity) blockEntity).getColor());
         Block.dropStack(world, pos, dropStack);
     }

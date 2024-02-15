@@ -1,4 +1,4 @@
-package minersstudios.whomine.block;
+package minersstudios.whomine.block.properties;
 
 import com.google.common.collect.Lists;
 import java.util.Arrays;

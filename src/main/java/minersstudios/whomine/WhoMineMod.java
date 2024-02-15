@@ -3,6 +3,8 @@ package minersstudios.whomine;
 import minersstudios.whomine.block.ModBlockEntitiesRegistry;
 import minersstudios.whomine.block.ModBlocksRegistry;
 import minersstudios.whomine.command.ModCommandsRegistry;
+import minersstudios.whomine.effect.ModDamageTypesRegistry;
+import minersstudios.whomine.effect.ModEffectsRegistry;
 import minersstudios.whomine.entity.ModEntitiesRegistry;
 import minersstudios.whomine.item.ModItemGroupsRegistry;
 import minersstudios.whomine.item.ModItemsRegistry;
@@ -22,6 +24,8 @@ public class WhoMineMod implements ModInitializer {
 		ModBlockEntitiesRegistry.register();
 		ModCommandsRegistry.register();
 		ModEntitiesRegistry.register();
+		ModEffectsRegistry.register();
+		ModDamageTypesRegistry.register();
 		ModItemsRegistry.register();
 		ModItemGroupsRegistry.register();
 

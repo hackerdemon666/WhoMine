@@ -1,0 +1,106 @@
+{
+  "variants": {
+    "facing=north,type=single": {
+      "model": "minecraft:block/acacia_stairs",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,type=right": {
+      "model": "minecraft:block/acacia_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,type=left": {
+      "model": "minecraft:block/acacia_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,type=middle_right": {
+      "model": "minecraft:block/acacia_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,type=middle_left": {
+      "model": "minecraft:block/acacia_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,type=middle": {
+      "model": "minecraft:block/acacia_stairs",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,type=bottom": {
+      "model": "minecraft:block/acacia_slab",
+      "uvlock": true
+    },
+
+
+
+    "facing=east,type=left": {
+      "model": "minecraft:block/acacia_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,type=right": {
+      "model": "minecraft:block/acacia_stairs_inner"
+    },
+    "facing=east,type=middle_left": {
+      "model": "minecraft:block/acacia_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,type=middle_right": {
+      "model": "minecraft:block/acacia_stairs_inner"
+    },
+    "facing=east,type=single": {
+      "model": "minecraft:block/acacia_stairs"
+    },
+    "facing=south,type=left": {
+      "model": "minecraft:block/acacia_stairs_inner"
+    },
+    "facing=south,type=right": {
+      "model": "minecraft:block/acacia_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,type=middle_left": {
+      "model": "minecraft:block/acacia_stairs_inner"
+    },
+    "facing=south,type=middle_right": {
+      "model": "minecraft:block/acacia_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,type=single": {
+      "model": "minecraft:block/acacia_stairs",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,type=left": {
+      "model": "minecraft:block/acacia_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,type=right": {
+      "model": "minecraft:block/acacia_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,type=middle_left": {
+      "model": "minecraft:block/acacia_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,type=middle_right": {
+      "model": "minecraft:block/acacia_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,type=single": {
+      "model": "minecraft:block/acacia_stairs",
+      "uvlock": true,
+      "y": 180
+    }
+  }
+}
