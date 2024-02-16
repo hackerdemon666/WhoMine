@@ -61,15 +61,7 @@ public class ModItemGroupsRegistry {
                     }).build()
     );
 
-//    public static ArrayList<Item> getWoodItems(Block block){
-//        ArrayList<Item> WoodItems = new ArrayList();
-//        for (int i = 0; i < WoodType.values().length; i++) {
-//            WoodType woodType = WoodType.getById(i);
-//            Identifier id = new Identifier(WhoMineMod.MOD_ID, woodType.getName() + "_" + Registries.BLOCK.getId(block).getPath());
-//            WoodItems.add(Registries.ITEM.get(id));
-//        }
-//        return WoodItems;
-//    }
-
-    public static void register() {}
+    public static void register() {
+        WhoMineMod.LOGGER.info("Registering ItemGroups for " + WhoMineMod.MOD_NAME);
+    }
 }

@@ -19,5 +19,7 @@ public class ModDamageTypesRegistry {
         return new DamageSource(world.getRegistryManager().get(RegistryKeys.DAMAGE_TYPE).entryOf(key));
     }
 
-    public static void register() {}
+    public static void register() {
+        WhoMineMod.LOGGER.info("Registering DamageTypes for " + WhoMineMod.MOD_NAME);
+    }
 }

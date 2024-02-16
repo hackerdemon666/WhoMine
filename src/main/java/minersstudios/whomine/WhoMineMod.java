@@ -15,8 +15,8 @@ import org.slf4j.LoggerFactory;
 
 public class WhoMineMod implements ModInitializer {
 	public static final String MOD_ID = "whomine";
-    public static final Logger LOGGER = LoggerFactory.getLogger("whomine");
-
+	public static final String MOD_NAME = "WhoMine";
+	public static final Logger LOGGER = LoggerFactory.getLogger("whomine");
 
 	@Override
 	public void onInitialize() {
@@ -29,6 +29,6 @@ public class WhoMineMod implements ModInitializer {
 		ModItemsRegistry.register();
 		ModItemGroupsRegistry.register();
 
-		SitOnUseBlock.register();
+		EventHandler.register();
 	}
 }

@@ -58,5 +58,7 @@ public class ModItemsRegistry {
         return woodItems;
     }
 
-    public static void register() {}
+    public static void register() {
+        WhoMineMod.LOGGER.info("Registering Items for " + WhoMineMod.MOD_NAME);
+    }
 }

@@ -1,5 +1,6 @@
 package minersstudios.whomine.command;
 
+import minersstudios.whomine.WhoMineMod;
 import minersstudios.whomine.entity.ModEntitiesRegistry;
 import minersstudios.whomine.entity.SitEntity;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -37,6 +38,8 @@ public class ModCommandsRegistry {
     }
 
     public static void register() {
+        WhoMineMod.LOGGER.info("Registering Commands for " + WhoMineMod.MOD_NAME);
+
         sitCommand();
     }
 }

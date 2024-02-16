@@ -1,5 +1,6 @@
 package minersstudios.whomine.block;
 
+import minersstudios.whomine.WhoMineMod;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
@@ -12,5 +13,7 @@ public class ModBlockEntitiesRegistry {
             FabricBlockEntityTypeBuilder.create(DyeableBlockEntity::new).build()
     );
 
-    public static void register() {}
+    public static void register() {
+        WhoMineMod.LOGGER.info("Registering BlockEntities for " + WhoMineMod.MOD_NAME);
+    }
 }

@@ -46,5 +46,7 @@ public class ModBlocksRegistry {
         return newBlock;
     }
 
-    public static void register() {}
+    public static void register() {
+        WhoMineMod.LOGGER.info("Registering Blocks for " + WhoMineMod.MOD_NAME);
+    }
 }

@@ -13,5 +13,7 @@ public class ModEffectsRegistry {
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(WhoMineMod.MOD_ID, name), effect);
     }
 
-    public static void register() {}
+    public static void register() {
+        WhoMineMod.LOGGER.info("Registering Effects for " + WhoMineMod.MOD_NAME);
+    }
 }
