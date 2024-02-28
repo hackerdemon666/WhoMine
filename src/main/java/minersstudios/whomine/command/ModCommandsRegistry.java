@@ -2,7 +2,7 @@ package minersstudios.whomine.command;
 
 import minersstudios.whomine.WhoMineMod;
 import minersstudios.whomine.entity.ModEntitiesRegistry;
-import minersstudios.whomine.entity.SitEntity;
+import minersstudios.whomine.entity.entities.SitEntity;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.Vec3d;

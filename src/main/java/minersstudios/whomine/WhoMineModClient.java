@@ -1,18 +1,20 @@
 package minersstudios.whomine;
 
-import minersstudios.whomine.block.DyeableBlockEntity;
 import minersstudios.whomine.block.ModBlocksRegistry;
+import minersstudios.whomine.block.blocks.DyeableBlockEntity;
 import minersstudios.whomine.entity.ModEntitiesRegistry;
-import minersstudios.whomine.entity.SitEntity;
+import minersstudios.whomine.entity.entities.SitEntity;
 import minersstudios.whomine.item.ModItemsRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.render.Frustum;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.item.DyeableItem;
@@ -21,14 +23,15 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 
-import java.util.Objects;
-
 @Environment(value = EnvType.CLIENT)
 public class WhoMineModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         for (Block block: ModBlocksRegistry.DyeableBlocks) {
             ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> getColorNbt((view), pos), block);
+        }
+        for (Block block: ModBlocksRegistry.TransparentBlocks) {
+            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
         }
         for (Item item: ModItemsRegistry.DyeableItems) {
             ColorProviderRegistry.ITEM.register((stack, tintIndex) -> ((DyeableItem) stack.getItem()).getColor(stack), item);

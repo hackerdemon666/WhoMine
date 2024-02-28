@@ -21,15 +21,11 @@
 		],
 		"client": [
 			"minersstudios.whomine.WhoMineModClient"
-		],
-		"fabric-datagen": [
-			"minersstudios.whomine.WhoMineModDataGenerator"
 		]
 	},
 	"mixins": [
 		"whomine.mixins.json"
 	],
-	"accessWidener": "whomine.accesswidener",
 	"depends": {
 		"fabricloader": ">=0.15.6",
 		"minecraft": "~1.20.4",

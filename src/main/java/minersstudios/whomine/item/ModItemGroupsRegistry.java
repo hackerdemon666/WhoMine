@@ -3,20 +3,13 @@ package minersstudios.whomine.item;
 import minersstudios.whomine.WhoMineMod;
 import minersstudios.whomine.block.ModBlocksRegistry;
 import minersstudios.whomine.block.properties.WoodType;
-import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.item.DyeableItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-
-import java.util.ArrayList;
 
 public class ModItemGroupsRegistry {
     public static final ItemGroup WHOMINE_BLOCK_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -36,14 +29,22 @@ public class ModItemGroupsRegistry {
     );
 
     public static final ItemGroup WHOMINE_FURNITURE_GROUP = Registry.register(Registries.ITEM_GROUP,
-        new Identifier(WhoMineMod.MOD_ID, "whomine_furniture_group_furniture"),
+        new Identifier(WhoMineMod.MOD_ID, "whomine_furniture_group"),
         FabricItemGroup.builder().displayName(Text.translatable("itemgroup.whomine_furniture"))
             .icon(() -> new ItemStack(ModItemsRegistry.BIG_ARMCHAIR_ITEMS[0])).entries((displayContext, entries) -> {
+                entries.add(ModItemsRegistry.COOL_CHAIR);
+                entries.add(ModItemsRegistry.BAR_CHAIR);
                 for (int i = 0; i < WoodType.values().length; i++) {
                     entries.add(ModItemsRegistry.BIG_ARMCHAIR_ITEMS[i]);
                 }
                 for (int i = 0; i < WoodType.values().length; i++) {
-                    entries.add(ModItemsRegistry.COUCH_ITEMS[i]);
+                    entries.add(ModItemsRegistry.BIG_CHAIR_ITEMS[i]);
+                }
+                for (int i = 0; i < WoodType.values().length; i++) {
+                    entries.add(ModItemsRegistry.SMALL_ARMCHAIR_ITEMS[i]);
+                }
+                for (int i = 0; i < WoodType.values().length; i++) {
+                    entries.add(ModItemsRegistry.SMALL_CHAIR_ITEMS[i]);
                 }
             }).build()
     );
@@ -60,6 +61,7 @@ public class ModItemGroupsRegistry {
                         entries.add(ModItemsRegistry.RAW_PLUMBUM);
                     }).build()
     );
+
 
     public static void register() {
         WhoMineMod.LOGGER.info("Registering ItemGroups for " + WhoMineMod.MOD_NAME);

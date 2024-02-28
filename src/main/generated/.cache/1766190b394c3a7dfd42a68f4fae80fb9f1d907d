@@ -1,8 +1,0 @@
-// 1.20.4	2024-02-15T14:54:47.9144961	WhoMine/Tags for minecraft:block
-8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\minecraft\tags\blocks\needs_diamond_tool.json
-8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\fabric\tags\blocks\needs_tool_level_4.json
-2be93521ce9001f667eb9d1bb307df031b67129c data\minecraft\tags\blocks\mineable\pickaxe.json
-8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\fabric\tags\blocks\needs_tool_level_5.json
-e33ead5f8c169d348e352a34f3e6d6fdfdfa2c2a data\minecraft\tags\blocks\mineable\axe.json
-8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\minecraft\tags\blocks\needs_stone_tool.json
-2be93521ce9001f667eb9d1bb307df031b67129c data\minecraft\tags\blocks\needs_iron_tool.json

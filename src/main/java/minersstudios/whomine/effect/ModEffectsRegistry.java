@@ -1,6 +1,7 @@
 package minersstudios.whomine.effect;
 
 import minersstudios.whomine.WhoMineMod;
+import minersstudios.whomine.effect.effects.RadiationStatusEffect;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

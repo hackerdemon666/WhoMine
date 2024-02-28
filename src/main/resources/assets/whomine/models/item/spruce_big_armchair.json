@@ -1,9 +1,9 @@
 {
-  "parent": "whomine:custom/furniture/chairs/big_armchair",
-  "texture_size": [16, 32],
-  "textures": {
-    "0": "whomine:block/furniture/chairs/padding",
-    "1": "whomine:block/furniture/chairs/spruce",
-    "particle": "whomine:block/furniture/chairs/padding"
-  }
+    "parent": "whomine:block/furniture/chairs/big_armchair",
+    "texture_size": [16, 32],
+    "textures": {
+        "0": "whomine:block/furniture/chairs/padding",
+        "1": "whomine:block/furniture/chairs/spruce",
+        "particle": "whomine:block/furniture/chairs/padding"
+    }
 }

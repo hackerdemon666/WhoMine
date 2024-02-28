@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "whomine:bar_chair",
+    "whomine:cool_chair",
+    "whomine:big_chair",
+    "whomine:small_chair",
+    "whomine:big_armchair",
+    "whomine:small_armchair"
+  ]
+}

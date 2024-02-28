@@ -1,0 +1,58 @@
+{
+  "variants": {
+    "facing=north,wood_type=oak": { "model": "whomine:item/oak_small_armchair"},
+    "facing=east,wood_type=oak":  { "model": "whomine:item/oak_small_armchair", "y":  90},
+    "facing=south,wood_type=oak": { "model": "whomine:item/oak_small_armchair", "y": 180},
+    "facing=west,wood_type=oak":  { "model": "whomine:item/oak_small_armchair", "y": 270},
+
+    "facing=north,wood_type=spruce": { "model": "whomine:item/spruce_small_armchair"},
+    "facing=east,wood_type=spruce":  { "model": "whomine:item/spruce_small_armchair", "y":  90},
+    "facing=south,wood_type=spruce": { "model": "whomine:item/spruce_small_armchair", "y": 180},
+    "facing=west,wood_type=spruce":  { "model": "whomine:item/spruce_small_armchair", "y": 270},
+
+    "facing=north,wood_type=birch": { "model": "whomine:item/birch_small_armchair"},
+    "facing=east,wood_type=birch":  { "model": "whomine:item/birch_small_armchair", "y":  90},
+    "facing=south,wood_type=birch": { "model": "whomine:item/birch_small_armchair", "y": 180},
+    "facing=west,wood_type=birch":  { "model": "whomine:item/birch_small_armchair", "y": 270},
+
+    "facing=north,wood_type=jungle": { "model": "whomine:item/jungle_small_armchair"},
+    "facing=east,wood_type=jungle":  { "model": "whomine:item/jungle_small_armchair", "y":  90},
+    "facing=south,wood_type=jungle": { "model": "whomine:item/jungle_small_armchair", "y": 180},
+    "facing=west,wood_type=jungle":  { "model": "whomine:item/jungle_small_armchair", "y": 270},
+
+    "facing=north,wood_type=acacia": { "model": "whomine:item/acacia_small_armchair"},
+    "facing=east,wood_type=acacia":  { "model": "whomine:item/acacia_small_armchair", "y":  90},
+    "facing=south,wood_type=acacia": { "model": "whomine:item/acacia_small_armchair", "y": 180},
+    "facing=west,wood_type=acacia":  { "model": "whomine:item/acacia_small_armchair", "y": 270},
+
+    "facing=north,wood_type=dark_oak": { "model": "whomine:item/dark_oak_small_armchair"},
+    "facing=east,wood_type=dark_oak":  { "model": "whomine:item/dark_oak_small_armchair", "y":  90},
+    "facing=south,wood_type=dark_oak": { "model": "whomine:item/dark_oak_small_armchair", "y": 180},
+    "facing=west,wood_type=dark_oak":  { "model": "whomine:item/dark_oak_small_armchair", "y": 270},
+
+    "facing=north,wood_type=mangrove": { "model": "whomine:item/mangrove_small_armchair"},
+    "facing=east,wood_type=mangrove":  { "model": "whomine:item/mangrove_small_armchair", "y":  90},
+    "facing=south,wood_type=mangrove": { "model": "whomine:item/mangrove_small_armchair", "y": 180},
+    "facing=west,wood_type=mangrove":  { "model": "whomine:item/mangrove_small_armchair", "y": 270},
+
+    "facing=north,wood_type=cherry": { "model": "whomine:item/cherry_small_armchair"},
+    "facing=east,wood_type=cherry":  { "model": "whomine:item/cherry_small_armchair", "y":  90},
+    "facing=south,wood_type=cherry": { "model": "whomine:item/cherry_small_armchair", "y": 180},
+    "facing=west,wood_type=cherry":  { "model": "whomine:item/cherry_small_armchair", "y": 270},
+
+    "facing=north,wood_type=bamboo": { "model": "whomine:item/bamboo_small_armchair"},
+    "facing=east,wood_type=bamboo":  { "model": "whomine:item/bamboo_small_armchair", "y":  90},
+    "facing=south,wood_type=bamboo": { "model": "whomine:item/bamboo_small_armchair", "y": 180},
+    "facing=west,wood_type=bamboo":  { "model": "whomine:item/bamboo_small_armchair", "y": 270},
+
+    "facing=north,wood_type=crimson": { "model": "whomine:item/crimson_small_armchair"},
+    "facing=east,wood_type=crimson":  { "model": "whomine:item/crimson_small_armchair", "y":  90},
+    "facing=south,wood_type=crimson": { "model": "whomine:item/crimson_small_armchair", "y": 180},
+    "facing=west,wood_type=crimson":  { "model": "whomine:item/crimson_small_armchair", "y": 270},
+
+    "facing=north,wood_type=warped": { "model": "whomine:item/warped_small_armchair"},
+    "facing=east,wood_type=warped":  { "model": "whomine:item/warped_small_armchair", "y":  90},
+    "facing=south,wood_type=warped": { "model": "whomine:item/warped_small_armchair", "y": 180},
+    "facing=west,wood_type=warped":  { "model": "whomine:item/warped_small_armchair", "y": 270}
+  }
+}

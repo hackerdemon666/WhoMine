@@ -1,6 +1,6 @@
 {
     "parent":"block/cube_all",
-    "textures":{"all":"block/oak_planks"},
+    "textures":{"all":"block/bamboo_planks"},
     "elements":[{
         "faces":{
             "down":{"cullface":"down","rotation":90,"texture":"#down"},

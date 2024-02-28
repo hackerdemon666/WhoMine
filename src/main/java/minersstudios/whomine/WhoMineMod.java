@@ -6,6 +6,7 @@ import minersstudios.whomine.command.ModCommandsRegistry;
 import minersstudios.whomine.effect.ModDamageTypesRegistry;
 import minersstudios.whomine.effect.ModEffectsRegistry;
 import minersstudios.whomine.entity.ModEntitiesRegistry;
+import minersstudios.whomine.event.EventHandler;
 import minersstudios.whomine.item.ModItemGroupsRegistry;
 import minersstudios.whomine.item.ModItemsRegistry;
 import net.fabricmc.api.ModInitializer;

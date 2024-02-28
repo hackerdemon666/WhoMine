@@ -1,0 +1,9 @@
+{
+	"parent": "whomine:block/furniture/chairs/small_armchair",
+	"texture_size": [16, 32],
+	"textures": {
+		"0": "whomine:block/furniture/chairs/padding",
+		"1": "whomine:block/furniture/chairs/mangrove",
+		"particle": "whomine:block/furniture/chairs/padding"
+	}
+}

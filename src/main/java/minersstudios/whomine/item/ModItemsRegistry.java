@@ -3,8 +3,8 @@ package minersstudios.whomine.item;
 import minersstudios.whomine.WhoMineMod;
 import minersstudios.whomine.block.ModBlocksRegistry;
 import minersstudios.whomine.block.properties.WoodType;
+import minersstudios.whomine.item.items.*;
 import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -15,10 +15,17 @@ import java.util.ArrayList;
 public class ModItemsRegistry {
     public static final ArrayList<Item> DyeableItems = new ArrayList();
 
-    public static final Item[] BIG_ARMCHAIR_ITEMS = getWoodItems(ModBlocksRegistry.BIG_ARMCHAIR, new Item.Settings().maxCount(16), true);
-    public static final Item[] COUCH_ITEMS = getWoodItems(ModBlocksRegistry.COUCH, new Item.Settings().maxCount(16), true);
+    //CHAIRS
+    public static final Item BAR_CHAIR = registerDyeableItem("bar_chair", new DyeableBlockItem(ModBlocksRegistry.BAR_CHAIR, new Item.Settings().maxCount(16)));
+    public static final Item COOL_CHAIR = registerDyeableItem("cool_chair", new DyeableBlockItem(ModBlocksRegistry.COOL_CHAIR, new Item.Settings().maxCount(16)));
+    public static final Item[] BIG_ARMCHAIR_ITEMS = registerWoodItems(ModBlocksRegistry.BIG_ARMCHAIR, new Item.Settings().maxCount(16), true);
+    public static final Item[] BIG_CHAIR_ITEMS = registerWoodItems(ModBlocksRegistry.BIG_CHAIR, new Item.Settings().maxCount(16), true);
+    public static final Item[] SMALL_ARMCHAIR_ITEMS = registerWoodItems(ModBlocksRegistry.SMALL_ARMCHAIR, new Item.Settings().maxCount(16), true);
+    public static final Item[] SMALL_CHAIR_ITEMS = registerWoodItems(ModBlocksRegistry.SMALL_CHAIR, new Item.Settings().maxCount(16), true);
 
-    public static final Item[] CARVED_PLANKS_ITEMS = getWoodItems(ModBlocksRegistry.CARVED_PLANKS, new Item.Settings(),false);
+//    public static final Item[] COUCH_ITEMS = getWoodItems(ModBlocksRegistry.COUCH, new Item.Settings().maxCount(16), true);
+
+    public static final Item[] CARVED_PLANKS_ITEMS = registerWoodItems(ModBlocksRegistry.CARVED_PLANKS, new Item.Settings(),false);
 
     public static final Item COLOR_BLOCK = registerDyeableItem("color_block", new DyeableBlockItem(ModBlocksRegistry.COLOR_BLOCK, new Item.Settings()));
 
@@ -44,7 +51,7 @@ public class ModItemsRegistry {
         return newItem;
     }
 
-    private static Item[] getWoodItems(Block block, Item.Settings settings, boolean isDyeable) {
+    private static Item[] registerWoodItems(Block block, Item.Settings settings, boolean isDyeable) {
         Item[] woodItems = new Item[WoodType.values().length];
         for (int i = 0; i < WoodType.values().length; i++) {
             WoodType woodType = WoodType.getById(i);

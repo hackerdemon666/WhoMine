@@ -8,7 +8,7 @@
     "wood_type=dark_oak": { "model": "whomine:item/dark_oak_framed_planks"},
     "wood_type=mangrove": { "model": "whomine:item/mangrove_framed_planks"},
     "wood_type=cherry": { "model": "whomine:item/cherry_framed_planks"},
-    "wood_type=bamboo": { "model": "whomine:item/oak_framed_planks"},
+    "wood_type=bamboo": { "model": "whomine:item/bamboo_framed_planks"},
     "wood_type=crimson": { "model": "whomine:item/crimson_framed_planks"},
     "wood_type=warped": { "model": "whomine:item/warped_framed_planks"}
   }

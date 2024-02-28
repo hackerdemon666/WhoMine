@@ -1,6 +1,7 @@
 package minersstudios.whomine.block;
 
 import minersstudios.whomine.WhoMineMod;
+import minersstudios.whomine.block.blocks.DyeableBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;

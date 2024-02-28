@@ -40,17 +40,13 @@ public enum WoodType implements StringIdentifiable {
         return id;
     }
 
-    public static WoodType getById(int id) {
-        for (WoodType type : values()) {
-            if (type.getId() == id) {
-                return type;
-            }
-        }
-        return OAK;
-    }
-
     public BlockSoundGroup getSoundGroup() {
         return soundGroup;
+    }
+
+    public static WoodType getById(int id) {
+        for (WoodType type : values()) if (type.getId() == id) return type;
+        return OAK;
     }
 
     public static ItemStack getWoodBlockItem(BlockState state) {

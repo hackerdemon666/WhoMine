@@ -1,6 +1,7 @@
 package minersstudios.whomine.entity;
 
 import minersstudios.whomine.WhoMineMod;
+import minersstudios.whomine.entity.entities.SitEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -16,6 +17,6 @@ public class ModEntitiesRegistry {
                     .dimensions(EntityDimensions.fixed(1f, 1f)).build());
 
     public static void register() {
-        WhoMineMod.LOGGER.info("Registering Entities for " + WhoMineMod.MOD_ID);
+        WhoMineMod.LOGGER.info("Registering Entities for " + WhoMineMod.MOD_NAME);
     }
 }

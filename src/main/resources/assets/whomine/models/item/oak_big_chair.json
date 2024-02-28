@@ -1,5 +1,5 @@
 {
-	"parent": "whomine:custom/furniture/chairs/big_chair",
+	"parent": "whomine:block/furniture/chairs/big_chair",
 	"texture_size": [16, 32],
 	"textures": {
 		"0": "whomine:block/furniture/chairs/padding",
