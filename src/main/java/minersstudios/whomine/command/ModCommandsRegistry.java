@@ -17,8 +17,7 @@ public class ModCommandsRegistry {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(literal("sit")
                 .executes(context -> {
                     PlayerEntity player = context.getSource().getPlayerOrThrow();
-                    Vec3d pos = Objects.requireNonNull(context.getSource().getPlayer()).getPos();
-                    assert player != null;
+                    Vec3d pos = context.getSource().getPlayer().getPos();
                     World world = player.getWorld();
 
                     if(!world.isClient && player.fallDistance == 0){
