@@ -57,6 +57,11 @@ public class DyeableWoodBlock extends Block implements BlockEntityProvider {
     }
 
     @Override
+    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return this.collisionType.getCollisionShape(state);
+    }
+
+    @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         super.onPlaced(world, pos, state, placer, stack);
         if (!(stack.getItem() instanceof DyeableWoodBlockItem item)) return;

@@ -66,6 +66,11 @@ public class WoodHorizontalFacingBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return this.collisionType.getCollisionShape(state);
+    }
+
+    @Override
     public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
         if (world.isClient) return;
         ItemStack dropStack = WoodType.getWoodBlockItem(state);

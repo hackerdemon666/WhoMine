@@ -51,6 +51,11 @@ public class DyeableHorizontalFacingBlock extends HorizontalFacingBlock implemen
     }
 
     @Override
+    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return this.collisionType.getCollisionShape(state);
+    }
+
+    @Override
     protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
         return null;
     }
