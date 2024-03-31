@@ -171,7 +171,7 @@ public class DyeableConnectingBlock extends HorizontalFacingBlock implements Blo
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext ctx) {
-        return this.collisionType.getBlockCollision(state);
+        return this.collisionType.getOutlineShape(state);
     }
 
     @Override

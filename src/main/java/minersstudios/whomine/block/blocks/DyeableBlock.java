@@ -18,7 +18,8 @@ public class DyeableBlock extends Block implements BlockEntityProvider {
     public ModBlockCollisionType collisionType;
     public DyeableBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);
-        this.collisionType = collisionType;}
+        this.collisionType = collisionType;
+    }
 
 
     @Override
@@ -28,7 +29,7 @@ public class DyeableBlock extends Block implements BlockEntityProvider {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext ctx) {
-        return this.collisionType.getBlockCollision(state);
+        return this.collisionType.getOutlineShape(state);
     }
 
     @Override

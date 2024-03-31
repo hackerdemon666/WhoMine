@@ -1,0 +1,8 @@
+{
+	"credit": "Made by Poloskun_ http://www.youtube.com/c/Enchig",
+	"parent": "whomine:item/bee",
+	"textures": {
+		"0": "whomine:item/cosmetics/hats/entity/bee/bee_angry",
+		"particle": "whomine:item/cosmetics/hats/entity/bee/bee_angry"
+	}
+}

@@ -1,5 +1,8 @@
 package minersstudios.whomine.entity.entities;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.block.DoorBlock;
+import net.minecraft.block.TrapdoorBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.NbtCompound;
@@ -8,6 +11,7 @@ import net.minecraft.world.World;
 
 public class SitEntity extends Entity {
     public static final String ENTITY_ID = "sit";
+
     public SitEntity(EntityType<SitEntity> type, World world) {
         super(type, world);
         this.setNoGravity(true);
@@ -22,7 +26,8 @@ public class SitEntity extends Entity {
         }
         if (this.hasPassengers() && !this.getWorld().isClient) {
             BlockPos blockPos = new BlockPos(this.getSteppingPos().getX(), (int) (this.getPos().getY() + 0.85D), this.getSteppingPos().getZ());
-            if (this.getWorld().getBlockState(blockPos).isAir()) {
+            BlockState state = this.getWorld().getBlockState(blockPos);
+            if (state.isAir() || (state.getBlock() instanceof TrapdoorBlock && state.get(TrapdoorBlock.OPEN))) {
                 this.discard();
             }
         }

@@ -1,48 +1,15 @@
-package minersstudios.whomine.event.events;
+package minersstudios.whomine.event;
 
 import minersstudios.whomine.datagen.ModTagsRegistry;
-import minersstudios.whomine.entity.ModEntitiesRegistry;
-import minersstudios.whomine.entity.entities.SitEntity;
-import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.SlabType;
 import net.minecraft.block.enums.StairShape;
 import net.minecraft.registry.Registries;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 
-public class SitOnUseBlock {
-    public static void onUseBlock() {
-        UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
-            BlockPos pos = new BlockPos(hitResult.getBlockPos());
-            BlockState state = world.getBlockState(pos);
-            Block block = state.getBlock();
-
-            if (SitPosition.canSit(block, state, hitResult)) {
-                Vec3d position = SitPosition.getSitPosition(state);
-                if(!world.isClient() && hand == Hand.MAIN_HAND && player.getMainHandStack().isEmpty()){
-                    SitEntity sit = ModEntitiesRegistry.SIT.create(world);
-                    sit.setPos(pos.getX() + position.x, pos.getY() + position.y, pos.getZ() + position.z);
-                    world.spawnEntity(sit);
-
-                    player.startRiding(sit);
-                }
-            }
-
-            return ActionResult.PASS;
-        });
-    }
-
-    public static void register() {
-        onUseBlock();
-    }
-}
-
-enum SitPosition {
+public enum SitPosition {
     STAIR("stair") {
         @Override
         public Vec3d getPosition(BlockState state){
@@ -134,7 +101,8 @@ enum SitPosition {
 
     public abstract Vec3d getPosition(BlockState state);
 
-    public static boolean canSit(Block block, BlockState state, BlockHitResult hitResult) {
+    public static boolean canSit(BlockState state, BlockHitResult hitResult) {
+        Block block = state.getBlock();
         Direction dir = hitResult.getSide();
         if (block instanceof StairsBlock) {
             Direction blockDir = state.get(HorizontalFacingBlock.FACING);

@@ -1,7 +1,6 @@
 package minersstudios.whomine.block.properties;
 
 import minersstudios.whomine.WhoMineMod;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -58,10 +57,5 @@ public enum WoodType implements StringIdentifiable {
     @Override
     public String asString() {
         return getName();
-    }
-
-    public static WoodType get(String name) {
-        for (WoodType type : values()) if (type.getName().equals(name)) return type;
-        return OAK;
     }
 }
