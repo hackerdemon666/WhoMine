@@ -1,6 +1,6 @@
 package minersstudios.whomine.item.items;
 
-import minersstudios.whomine.block.properties.WoodTypeProperty;
+import minersstudios.whomine.block.ModProperties;
 import minersstudios.whomine.item.ModItemsRegistry;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.minecraft.block.*;
@@ -64,7 +64,7 @@ public class WrenchItem extends Item {
             ConnectingBlock.FACING_PROPERTIES.get(Direction.WEST),
             ConnectingBlock.FACING_PROPERTIES.get(Direction.UP),
             ConnectingBlock.FACING_PROPERTIES.get(Direction.DOWN),
-            WoodTypeProperty.of("wood_type")
+            ModProperties.WOOD_TYPE
     ));
 
     public WrenchItem(Settings settings) {

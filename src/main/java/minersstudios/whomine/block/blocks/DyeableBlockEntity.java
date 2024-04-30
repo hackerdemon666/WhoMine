@@ -21,7 +21,7 @@ public class DyeableBlockEntity extends BlockEntity {
     }
 
     public int getColor() {
-        return isPainted() ? this.color : DEFAULT_COLOR;
+        return this.color;
     }
 
     public void setColor(int newColor, LivingEntity user) {

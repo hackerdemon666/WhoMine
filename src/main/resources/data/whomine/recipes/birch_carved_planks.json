@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": {
+      "item": "minecraft:birch_slab"
+    }
+  },
+  "pattern": [
+    "W",
+    "W"
+  ],
+  "result": {
+    "item": "whomine:birch_carved_planks"
+  }
+}

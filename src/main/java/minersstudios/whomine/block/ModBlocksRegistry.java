@@ -36,6 +36,8 @@ public class ModBlocksRegistry {
     public static final Block SMALL_ARMCHAIR = registerDyeableBlock("small_armchair", new DyeableWoodHorizontalFacingBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(0.75f).nonOpaque(), ModBlockCollisionType.SMALL_ARMCHAIR), false);
     public static final Block SMALL_CHAIR = registerDyeableBlock("small_chair", new DyeableWoodBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(0.75f).nonOpaque(), ModBlockCollisionType.SMALL_CHAIR), true);
 
+    public static final Block CHESS_BLOCK = registerDyeableBlock("chess_block", new ChessBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BLOCK).strength(0.75f).nonOpaque(), ModBlockCollisionType.CHESS_BLOCK), true);
+
     //    public static final Block COUCH = registerDyeableBlock("couch", new DyeableConnectingBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(0.75f).nonOpaque(), ModBlockCollisionType.DEFAULT_BLOCK));
 
     private static Block registerBlock(String name, Block block) {

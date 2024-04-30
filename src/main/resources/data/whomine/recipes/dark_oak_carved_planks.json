@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": {
+      "item": "minecraft:dark_oak_slab"
+    }
+  },
+  "pattern": [
+    "W",
+    "W"
+  ],
+  "result": {
+    "item": "whomine:dark_oak_carved_planks"
+  }
+}

@@ -1,8 +1,8 @@
 package minersstudios.whomine.block.blocks;
 
 import minersstudios.whomine.block.ModBlockCollisionType;
+import minersstudios.whomine.block.ModProperties;
 import minersstudios.whomine.block.properties.WoodType;
-import minersstudios.whomine.block.properties.WoodTypeProperty;
 import minersstudios.whomine.item.items.DyeableWoodBlockItem;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -12,6 +12,7 @@ import net.minecraft.item.DyeableItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
@@ -20,7 +21,7 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 public class DyeableWoodBlock extends Block implements BlockEntityProvider {
-    public static final WoodTypeProperty WOOD_TYPE = WoodTypeProperty.of("wood_type");
+    public static final EnumProperty<WoodType> WOOD_TYPE = ModProperties.WOOD_TYPE;
     public ModBlockCollisionType collisionType;
 
     public DyeableWoodBlock(Settings settings, ModBlockCollisionType collisionType) {

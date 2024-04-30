@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": {
+      "item": "minecraft:crimson_slab"
+    }
+  },
+  "pattern": [
+    "WW"
+  ],
+  "result": {
+    "item": "whomine:crimson_framed_planks"
+  }
+}

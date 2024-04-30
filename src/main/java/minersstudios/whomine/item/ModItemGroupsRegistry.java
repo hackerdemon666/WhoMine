@@ -22,6 +22,12 @@ public class ModItemGroupsRegistry {
                 for (Item item : ModItemsRegistry.CARVED_PLANKS_ITEMS) {
                     entries.add(item);
                 }
+                for (Item item : ModItemsRegistry.FRAMED_PLANKS_ITEMS) {
+                    entries.add(item);
+                }
+                for (Item item : ModItemsRegistry.VERTICAL_PLANKS_ITEMS) {
+                    entries.add(item);
+                }
 
                 entries.add(ModBlocksRegistry.PLUMBUM_ORE);
                 entries.add(ModBlocksRegistry.PLUMBUM_BLOCK);
@@ -48,6 +54,10 @@ public class ModItemGroupsRegistry {
                     entries.add(item);
                 }
                 for (Item item : ModItemsRegistry.SMALL_CHAIR_ITEMS) {
+                    entries.add(item);
+                }
+
+                for (Item item : ModItemsRegistry.CHESS_ITEMS) {
                     entries.add(item);
                 }
             }).build()
@@ -114,6 +124,7 @@ public class ModItemGroupsRegistry {
 
                         entries.add(ModItemsRegistry.PLUMBUM_INGOT);
                         entries.add(ModItemsRegistry.RAW_PLUMBUM);
+                        entries.add(ModItemsRegistry.SADDLE);
                     }).build()
     );
 

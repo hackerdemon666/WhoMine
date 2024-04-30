@@ -1,7 +1,7 @@
 package minersstudios.whomine.item.items;
 
+import minersstudios.whomine.block.ModProperties;
 import minersstudios.whomine.block.properties.WoodType;
-import minersstudios.whomine.block.properties.WoodTypeProperty;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -55,7 +55,7 @@ public class DyeableWoodBlockItem extends BlockItem implements DyeableItem {
             if (itemPlacementContext == null || state == null) {
                 return ActionResult.FAIL;
             } else {
-                BlockState blockState = state.with(WoodTypeProperty.of("wood_type"), this.woodType);
+                BlockState blockState = state.with(ModProperties.WOOD_TYPE, this.woodType);
 
                 if (blockState == null) {
                     return ActionResult.FAIL;

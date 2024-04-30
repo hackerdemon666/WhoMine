@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": {
+      "item": "minecraft:cherry_planks"
+    }
+  },
+  "pattern": [
+    "W",
+    "W",
+    "W"
+  ],
+  "result": {
+    "item": "whomine:cherry_vertical_planks",
+    "count": 3
+  }
+}

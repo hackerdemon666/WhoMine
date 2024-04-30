@@ -1,14 +1,15 @@
 package minersstudios.whomine.block.blocks;
 
 import minersstudios.whomine.block.ModBlockCollisionType;
+import minersstudios.whomine.block.ModProperties;
 import minersstudios.whomine.block.properties.WoodType;
-import minersstudios.whomine.block.properties.WoodTypeProperty;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
@@ -17,7 +18,7 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 public class WoodBlock extends Block {
-    public static final WoodTypeProperty WOOD_TYPE = WoodTypeProperty.of("wood_type");
+    public static final EnumProperty<WoodType> WOOD_TYPE = ModProperties.WOOD_TYPE;
     public ModBlockCollisionType collisionType;
     public WoodBlock(Settings settings, ModBlockCollisionType collisionType) {
         super(settings);

@@ -21,7 +21,6 @@ public class DyeableBlock extends Block implements BlockEntityProvider {
         this.collisionType = collisionType;
     }
 
-
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new DyeableBlockEntity(pos, state);

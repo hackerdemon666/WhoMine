@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": {
+      "item": "minecraft:jungle_slab"
+    }
+  },
+  "pattern": [
+    "WW"
+  ],
+  "result": {
+    "item": "whomine:jungle_framed_planks"
+  }
+}

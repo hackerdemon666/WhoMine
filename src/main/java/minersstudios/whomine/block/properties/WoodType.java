@@ -1,6 +1,7 @@
 package minersstudios.whomine.block.properties;
 
 import minersstudios.whomine.WhoMineMod;
+import minersstudios.whomine.block.ModProperties;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -49,7 +50,7 @@ public enum WoodType implements StringIdentifiable {
     }
 
     public static ItemStack getWoodBlockItem(BlockState state) {
-        WoodType woodType = state.get(WoodTypeProperty.of("wood_type"));
+        WoodType woodType = state.get(ModProperties.WOOD_TYPE);
         Identifier id = new Identifier(WhoMineMod.MOD_ID, woodType.getName() + "_" + Registries.BLOCK.getId(state.getBlock()).getPath());
         return Registries.ITEM.get(id).getDefaultStack();
     }

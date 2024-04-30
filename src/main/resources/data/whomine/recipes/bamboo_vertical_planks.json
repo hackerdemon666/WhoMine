@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": {
+      "item": "minecraft:bamboo_planks"
+    }
+  },
+  "pattern": [
+    "W",
+    "W",
+    "W"
+  ],
+  "result": {
+    "item": "whomine:bamboo_vertical_planks",
+    "count": 3
+  }
+}

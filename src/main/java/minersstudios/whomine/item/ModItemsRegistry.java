@@ -2,10 +2,12 @@ package minersstudios.whomine.item;
 
 import minersstudios.whomine.WhoMineMod;
 import minersstudios.whomine.block.ModBlocksRegistry;
+import minersstudios.whomine.block.properties.ChessType;
 import minersstudios.whomine.block.properties.WoodType;
 import minersstudios.whomine.item.items.*;
+import minersstudios.whomine.item.items.SaddleItem;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -26,12 +28,10 @@ public class ModItemsRegistry {
 //    public static final Item[] COUCH_ITEMS = getWoodItems(ModBlocksRegistry.COUCH, new Item.Settings().maxCount(16), true);
 
     public static final Item[] CARVED_PLANKS_ITEMS = registerWoodItems(ModBlocksRegistry.CARVED_PLANKS, new Item.Settings(),false);
+    public static final Item[] FRAMED_PLANKS_ITEMS = registerWoodItems(ModBlocksRegistry.FRAMED_PLANKS, new Item.Settings(),false);
+    public static final Item[] VERTICAL_PLANKS_ITEMS = registerWoodItems(ModBlocksRegistry.VERTICAL_PLANKS, new Item.Settings(),false);
 
     public static final Item COLOR_BLOCK = registerDyeableItem("color_block", new DyeableBlockItem(ModBlocksRegistry.COLOR_BLOCK, new Item.Settings()));
-
-//    public static final Block CARVED_PLANKS = registerItem("carved_planks", new WoodBlockItem(ModBlocksRegistry.CARVED_PLANKS, new Item.Settings(), WoodType.OAK);
-//    public static final Block FRAMED_PLANKS = registerItem("framed_planks", );
-//    public static final Block VERTICAL_PLANKS = registerItem("vertical_planks", );
 
     public static final Item RAW_PLUMBUM = registerItem("raw_plumbum", new Item(new Item.Settings()));
     public static final Item PLUMBUM_INGOT = registerItem("plumbum_ingot", new Item(new Item.Settings()));
@@ -73,6 +73,11 @@ public class ModItemsRegistry {
 
     public static final Item CIGARETTE = registerItem("cigarette", new HatItem(new Item.Settings().maxCount(1)));
 
+    public static final Item SADDLE = registerItem("saddle", new SaddleItem(new Item.Settings().maxCount(1)));
+
+    public static final Item[] CHESS_ITEMS = registerChessItems(ModBlocksRegistry.CHESS_BLOCK, new Item.Settings());
+
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(WhoMineMod.MOD_ID, name), item);
     }
@@ -110,6 +115,16 @@ public class ModItemsRegistry {
             }
         }
         return woodItems;
+    }
+
+    private static Item[] registerChessItems(Block block, Item.Settings settings) {
+        Item[] chessItems = new Item[ChessType.values().length];
+        for (ChessType chessType : ChessType.values()) {
+            int i = chessType.getId();
+            chessItems[i] = registerItem("piece_" + chessType.getName(), new ChessBlockItem(block, settings, chessType));
+            DyeableItems.add(chessItems[i]);
+        }
+        return chessItems;
     }
 
     public static void register() {

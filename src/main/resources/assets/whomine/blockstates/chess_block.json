@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "facing=north,chess_type=king": { "model": "whomine:item/piece_king"},
+    "facing=east,chess_type=king":  { "model": "whomine:item/piece_king", "y":  90},
+    "facing=south,chess_type=king": { "model": "whomine:item/piece_king", "y": 180},
+    "facing=west,chess_type=king":  { "model": "whomine:item/piece_king", "y": 270},
+
+    "facing=north,chess_type=queen": { "model": "whomine:item/piece_queen"},
+    "facing=east,chess_type=queen":  { "model": "whomine:item/piece_queen", "y":  90},
+    "facing=south,chess_type=queen": { "model": "whomine:item/piece_queen", "y": 180},
+    "facing=west,chess_type=queen":  { "model": "whomine:item/piece_queen", "y": 270},
+
+    "facing=north,chess_type=rook": { "model": "whomine:item/piece_rook"},
+    "facing=east,chess_type=rook":  { "model": "whomine:item/piece_rook", "y":  90},
+    "facing=south,chess_type=rook": { "model": "whomine:item/piece_rook", "y": 180},
+    "facing=west,chess_type=rook":  { "model": "whomine:item/piece_rook", "y": 270},
+
+    "facing=north,chess_type=bishop": { "model": "whomine:item/piece_bishop"},
+    "facing=east,chess_type=bishop":  { "model": "whomine:item/piece_bishop", "y":  90},
+    "facing=south,chess_type=bishop": { "model": "whomine:item/piece_bishop", "y": 180},
+    "facing=west,chess_type=bishop":  { "model": "whomine:item/piece_bishop", "y": 270},
+
+    "facing=north,chess_type=knight": { "model": "whomine:item/piece_knight"},
+    "facing=east,chess_type=knight":  { "model": "whomine:item/piece_knight", "y":  90},
+    "facing=south,chess_type=knight": { "model": "whomine:item/piece_knight", "y": 180},
+    "facing=west,chess_type=knight":  { "model": "whomine:item/piece_knight", "y": 270},
+
+    "facing=north,chess_type=pawn": { "model": "whomine:item/piece_pawn"},
+    "facing=east,chess_type=pawn":  { "model": "whomine:item/piece_pawn", "y":  90},
+    "facing=south,chess_type=pawn": { "model": "whomine:item/piece_pawn", "y": 180},
+    "facing=west,chess_type=pawn":  { "model": "whomine:item/piece_pawn", "y": 270}
+  }
+}
